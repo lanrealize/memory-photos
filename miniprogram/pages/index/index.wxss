@@ -1,1 +1,35 @@
 /**index.wxss**/
+.index-background{
+  transform: scale(1.1);
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-image: url(http://image.lifeprint.site/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  filter: blur(5px);
+
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.index-title {
+  padding-top: 20vh;
+  z-index: 1;
+}
+
+.index-button{
+  position: fixed;
+  top: 80vh;
+  height: 10vw;
+  width: 50vw;
+  border-radius: 1vw;
+
+  background-color: black;
+  color: white;
+
+  text-align: center;
+  line-height: 10vw;
+}

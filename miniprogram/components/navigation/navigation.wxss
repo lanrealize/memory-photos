@@ -1,0 +1,20 @@
+/* components/navigation/navigation.wxss */
+.navigation-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.navigation-seperate-line {
+  width: 5vw;
+  height: 0.4vw;
+  background-color: black;
+  border-radius: 2px;
+}
+
+.navigation-subtitle {
+  font-size: 25rpx;
+  color: #808080;
+  margin-bottom: 2vw;
+}

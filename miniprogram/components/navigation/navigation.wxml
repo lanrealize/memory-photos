@@ -1,0 +1,12 @@
+<!--components/navigation/navigation.wxml-->
+<view wx:if="{{page == 'albums'}}" class="navigation-root">
+  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 35rpx;">相册列表</view>
+  <view class="navigation-seperate-line"></view>
+  <view class="navigation-subtitle" style="line-height: {{menuHeight * 0.65}}px;">albums</view>
+</view>
+<view wx:if="{{page == 'details'}}" class="navigation-root">
+  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx;"><p>8月<span style="font-size: 24rpx; padding-left: 1vw;">2023·广州</span></p></view>
+</view>
+<view wx:if="{{page == 'index'}}" class="navigation-root">
+  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx;"><p>回忆影社</p></view>
+</view>
