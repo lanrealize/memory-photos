@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="general-container">
-  <view class="index-background"></view>
+  <view class="index-background" style="transform: scale({{scale}}); background-image: url({{bg}});"></view>
   <navigation page="index" style="z-index: 1;"></navigation>
   <view class="index-description"></view>
   <view type="primary" class="index-button" bindtap="onStartClick">开始</view>

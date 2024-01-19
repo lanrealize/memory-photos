@@ -1,10 +1,10 @@
 /**index.wxss**/
 .index-background{
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
   width: 100vw;
   height: 100vh;
   display: block;
-  background-image: url(http://image.lifeprint.site/background.jpg);
+  /* background-image: url(http://image.lifeprint.site/background.jpg); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -13,6 +13,9 @@
   position: fixed;
   left: 0;
   top: 0;
+
+  transition: transform 5s ease-in-out; 
+  transition: background-image 5s ease-in-out; 
 }
 
 .index-title {
