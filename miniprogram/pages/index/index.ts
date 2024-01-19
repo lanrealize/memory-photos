@@ -1,11 +1,11 @@
 // index.ts
-// 获取应用实例
-const app = getApp<IAppOption>()
+import {bgUrls} from "../../configs/common"
 
 Component({
   data: {
     scale: "1.1",
-    bg: "http://image.lifeprint.site/background.jpg"
+    bg: "http://image.lifeprint.site/background.jpg",
+    bgUrls: bgUrls
   },
 
   methods: {
