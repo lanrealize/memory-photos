@@ -19,6 +19,7 @@ Component({
           bg: "http://image.lifeprint.site/background.jpg"
         })
       }
+      console.log("changed bg")
     }
     
   },
@@ -26,7 +27,7 @@ Component({
   lifetimes: {
     created: function () {
       console.log(this.data.bg)
-      setInterval(() => this.changeBg(), 6000)
+      setInterval(() => this.changeBg(), 8000)
     },
   }
 })
