@@ -15,7 +15,7 @@
   top: 0;
 
   transition: transform 5s ease-in-out; 
-  transition: background-image 3s ease-in-out; 
+  transition: background-image 2s ease-in-out; 
 }
 
 .index-title {

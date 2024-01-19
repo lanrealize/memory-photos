@@ -8,5 +8,5 @@
   <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx;"><p>8月<span style="font-size: 24rpx; padding-left: 1vw;">2023·广州</span></p></view>
 </view>
 <view wx:if="{{page == 'index'}}" class="navigation-root">
-  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx;"><p>回忆影社</p></view>
+  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx; color: white;"><p>回忆影社</p></view>
 </view>

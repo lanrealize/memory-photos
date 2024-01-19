@@ -4,30 +4,37 @@ import {bgUrls} from "../../configs/common"
 Component({
   data: {
     scale: "1.1",
-    bg: "http://image.lifeprint.site/background.jpg",
+    bg: "",
     bgUrls: bgUrls
   },
 
   methods: {
-    changeBg(): void {
-      if (this.data.bg == "http://image.lifeprint.site/background.jpg") {
-        this.setData({
-          bg: "http://image.lifeprint.site/emptyAlbum.jpg"
-        });
-      } else {
-        this.setData({
-          bg: "http://image.lifeprint.site/background.jpg"
-        })
-      }
-      console.log("changed bg")
+    changeBgWithTimeout(currentIndex: number): void {
+      const currentValue = bgUrls[currentIndex];
+      this.setBg(currentValue)
+      currentIndex = (currentIndex + 1) % bgUrls.length;
+      setTimeout(() => this.changeBgWithTimeout(currentIndex), 4000);
+    },
+
+    setBg(bgUrl: string): void {
+      this.setData({
+        bg: bgUrl
+      })
+    },
+
+    setScale(scale: string): void {
+      this.setData({
+        scale: scale
+      })
     }
-    
   },
 
   lifetimes: {
-    created: function () {
-      console.log(this.data.bg)
-      setInterval(() => this.changeBg(), 8000)
+    attached: function () {
+      this.setBg("https://upload-images.jianshu.io/upload_images/15219429-5a4407d920ea8a45.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp");
+      setTimeout(() => {
+        this.changeBgWithTimeout(0);
+      }, 500);
     },
   }
 })

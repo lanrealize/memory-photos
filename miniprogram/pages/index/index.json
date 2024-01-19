@@ -2,6 +2,7 @@
   "usingComponents": {
     "navigation": "/components/navigation/navigation"
   },
+  "navigationBarTextStyle": "white",
   "disableScroll": true
   
 }
