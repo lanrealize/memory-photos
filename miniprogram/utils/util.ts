@@ -43,3 +43,11 @@ export const preLoadImage = (imageUrl: string): Promise<string> => {
     }
   })
 }
+
+export const preLoadImageReturnBase64 = async (imageUrl: string): Promise<string> => {
+  const splitArray = imageUrl.split('.');
+  const format = splitArray[splitArray.length - 1];
+  const tempUrl = await preLoadImage(imageUrl);
+  let base64 = wx.getFileSystemManager().readFileSync(tempUrl, 'base64');
+  return 'data:image/' + format +';base64,' + base64;
+}

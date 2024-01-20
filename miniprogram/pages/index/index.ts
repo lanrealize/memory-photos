@@ -1,19 +1,20 @@
 // index.ts
 import { bgUrls } from "../../configs/common"
-import { preLoadImage } from "../../utils/util"
+import { preLoadImageReturnBase64 } from "../../utils/util"
 
 Page({
   data: {
     scale: "1.1",
     bg: "",
-    bgUrls: bgUrls
+    bgUrls: bgUrls,
+    bgBase64s: []
   },
 
-  changeBgWithTimeout(currentIndex: number): void {
-    const currentValue = bgUrls[currentIndex];
-    this.setBg(currentValue)
+  async changeBgWithTimeout(bgBase64: string, currentIndex: number): Promise<void> {
+    this.setBg(bgBase64);
+    const newBase64 = await preLoadImageReturnBase64(bgUrls[currentIndex]);
     currentIndex = (currentIndex + 1) % bgUrls.length;
-    setTimeout(() => this.changeBgWithTimeout(currentIndex), 4000);
+    setTimeout(() => this.changeBgWithTimeout(newBase64, currentIndex), 3000);
   },
 
   setBg(bgUrl: string): void {
@@ -28,24 +29,15 @@ Page({
     })
   },
 
-  reloadBgs(): void {
-    this.setData({
-      bgUrls: bgUrls
-    })
-  },
-
   async onLoad() {
-    // setTimeout(() => {
-    //   this.changeBgWithTimeout(0);
-    // }, 500);
+    const bgBase640 = await preLoadImageReturnBase64(bgUrls[0]);
+    this.setBg(bgBase640);
 
-    const imgUrl = await preLoadImage("https://upload-images.jianshu.io/upload_images/15219429-5a4407d920ea8a45.jpg");
+    const bgBase641 = await preLoadImageReturnBase64(bgUrls[1]);
 
-    this.setBg(imgUrl);
-  },
-
-  // onShow() {
-  //   this.reloadBgs();
-  // }
+    setTimeout(() => {
+      this.changeBgWithTimeout(bgBase641, 2);
+    }, 500);
+  }
 
 })
