@@ -1,0 +1,23 @@
+<!--components/details-bottom-menu/details-bottom-menu.wxml-->
+<view class="details-bottom-menu-root">
+  <view class="details-bottom-menu-main">
+    <view class="details-bottom-menu-main-title details-bottom-menu-boader">
+      <image class="details-bottom-menu-main-title-image" src="/assets/icon.png"></image>
+      <view class="details-bottom-menu-main-title-text">
+        <view class="details-bottom-menu-main-title-text-main">回忆影社</view>
+        <view class="details-bottom-menu-main-title-text-sub">记录生活中的每一次感动</view>
+      </view>
+    </view>
+    <view class="details-bottom-menu-main-play details-bottom-menu-icon-container details-bottom-menu-boader">
+      <image src="/assets/icons/play.svg" class="details-bottom-menu-icon"></image>
+      <view class="details-bottom-menu-icon-text">播放</view>
+    </view>
+    <view class="details-bottom-menu-main-share details-bottom-menu-icon-container details-bottom-menu-boader">
+      <image src="/assets/icons/share.svg" class="details-bottom-menu-icon"></image>
+      <view class="details-bottom-menu-icon-text">分享</view>
+    </view>
+    <view class="details-bottom-menu-add details-bottom-menu-icon-container">
+      添加
+    </view>
+  </view>
+</view>

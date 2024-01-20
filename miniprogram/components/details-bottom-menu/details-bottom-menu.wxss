@@ -1,0 +1,83 @@
+/* components/details-bottom-menu/details-bottom-menu.wxss */
+.details-bottom-menu-root {
+  height: 9.5vh;
+  width: 100vw;
+}
+
+.details-bottom-menu-main {
+  height: 6.5vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: 47vw 15vw 15vw 23vw;
+  grid-template-areas: "title play share add";
+}
+
+.details-bottom-menu-main-title {
+  grid-area: title;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+.details-bottom-menu-main-title-image {
+  height: 10vw;
+  width: 10vw;
+  border-radius: 3.8vw;
+  padding-left: 5vw;
+}
+
+.details-bottom-menu-main-title-text {
+  flex-direction: column;
+  padding-left: 3vw;
+}
+
+.details-bottom-menu-main-title-text-main {
+  font-size: 24rpx;
+}
+
+.details-bottom-menu-main-title-text-sub {
+  font-size: 16rpx;
+  color: #808080;
+}
+
+.details-bottom-menu-main-play {
+  grid-area: play;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-bottom-menu-main-share {
+  grid-area: share;
+}
+
+.details-bottom-menu-add {
+  grid-area: add;
+  font-size: 24rpx;
+  background-color: black;
+  color: white;
+}
+
+.details-bottom-menu-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-bottom-menu-boader {
+  border: 0.2px solid rgba(230, 230, 230, 1);
+}
+
+.details-bottom-menu-icon {
+  height: 6vw;
+  width: 6vw;
+}
+
+.details-bottom-menu-icon-text {
+  font-size: 18rpx;
+  color: #808080;
+}

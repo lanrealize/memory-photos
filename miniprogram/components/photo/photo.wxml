@@ -1,0 +1,23 @@
+<!--components/photo/photo.wxml-->
+<view class="photo-root">
+  <view class="photo-title photo-column-container">
+    <view class="photo-title-point">
+      <view class="photo-title-point-instance"></view>
+    </view>
+    <view class="photo-title-text">
+      <p>{{title}}<span class="photo-title-text-subtext">{{subTitle}}</span></p>
+    </view>
+  </view>
+  <view class="photo-main photo-column-container" wx:if="{{type != 'end'}}">
+    <view class="photo-main-line"></view>
+    <view class="photo-main-main">
+      <view class="photo-main-main-text">{{description}}</view>
+      <image src="{{imageUrl}}" mode="heightFix" class="photo-main-main-photo">
+        <image src="/assets/logos-white-removed.png" mode="aspectFill" class="photo-main-main-photo-logos photo-main-main-photo-logos-size"></image>
+        <view class="photo-main-main-photo-logos-bg photo-main-main-photo-logos-size"></view>
+      </image>
+      <view class="photo-main-main-placeholder"></view>
+    </view>
+  </view>
+  <view class="photo-end-placeholder" wx:if="{{type == 'end'}}"></view>
+</view>

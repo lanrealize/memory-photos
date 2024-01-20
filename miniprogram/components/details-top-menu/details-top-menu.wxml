@@ -1,0 +1,16 @@
+<!--components/details-top-menu/details-top-menu.wxml-->
+<view class="details-top-menu-root" style="top: {{top}}px">
+  <view class="details-top-menu-main">
+    <view class="details-top-menu-item-container details-top-menu-item0">
+      <view style="margin-top: 0.7vh;">顺序浏览</view>
+      <view class="details-top-menu-item-selected"></view>
+    </view>
+    <view class="details-top-menu-item-container details-top-menu-item1">倒序浏览</view>
+    <view class="details-top-menu-item-container details-top-menu-item2">随机浏览</view>
+    <view class="details-top-menu-item-container details-top-menu-item3">回忆模式</view>
+    <view class="details-top-menu-item4">
+      <image src='/assets/icons/top.svg' class="details-top-menu-icon"></image>
+      <image src='/assets/icons/config.svg' class="details-top-menu-icon"></image>
+    </view>
+  </view>
+</view>

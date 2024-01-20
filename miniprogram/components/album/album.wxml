@@ -17,7 +17,7 @@
         <view style="grid-area: pic5; background-color: darkgray;"></view>
       </view>
       <view class="album-main-copyright"><p>© 该相册中所有照片版权属于作者，如需转载以及商务合作请联系客服。<span><image src='/assets/logos.png' style="height: 1.8vw; padding-left: vw;" mode="heightFix"></image></span></p></view>
-      <view class="album-main-button"><p style="display: flex; flex-direction: row;">查看详情<span style="display: flex; align-items: center;"><image src='/assets/icons/right.svg' style="width:25rpx; height: 25rpx; padding-left: 1vw;" mode="heightFix"></image></span></p></view>
+      <view bindtap="onViewClick" class="album-main-button"><p style="display: flex; flex-direction: row;">查看详情<span style="display: flex; align-items: center;"><image src='/assets/icons/right.svg' style="width:25rpx; height: 25rpx; padding-left: 1vw;" mode="heightFix"></image></span></p></view>
     </view>
   </view>
 </view>

@@ -1,0 +1,105 @@
+/* components/photo/photo.wxss */
+.photo-root {
+  width: 90vw;
+
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-areas: "title" "main";
+}
+
+.photo-title {
+  grid-area: title;
+}
+
+.photo-title-point {
+  grid-area: photo-left;
+  margin: auto;
+}
+
+.photo-title-point-instance {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 1vw;
+  background-color: black;
+}
+
+.photo-title-text {
+  grid-area: photo-right;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.photo-title-text-subtext {
+  font-size: 24rpx;
+  font-weight: 500;
+  padding-left: 1.5vw;
+  color: rgb(128, 128, 128)
+}
+
+.photo-main {
+  grid-area: main;
+}
+
+.photo-main-line {
+  grid-area: photo-left;
+  margin: auto;
+  width: 0;
+  height: 100%;
+  background-color: black;
+  /* margin-top: -0.5vh; */
+  border: 0.8px solid rgba(0, 0, 0, 1);
+}
+
+.photo-main-main {
+  grid-area: photo-right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.photo-main-main-text {
+  font-size: 22rpx;
+  color: #808080;
+  padding-top: 0.6vh;
+  padding-bottom: 1.2vh;
+}
+
+.photo-main-main-photo {
+  position: relative;
+  max-width: 84vw;
+  max-height: 30vh;
+}
+
+.photo-main-main-photo-logos {
+  position: absolute;
+  z-index: 1;
+}
+
+.photo-main-main-photo-logos-bg {
+  position: absolute;
+  background-color: #303030;
+  filter: blur(9px);
+  opacity: 0.5;
+}
+
+.photo-main-main-photo-logos-size {
+  bottom: 0.8vh;
+  right: 2vw;
+  width: 11.25vw;
+  height: 1vh;
+}
+
+.photo-main-main-placeholder {
+  height: 1vh;
+}
+
+.photo-column-container {
+  display: grid;
+  grid-template-columns: 2vw 3vw 84vw;
+  grid-template-areas: "photo-left . photo-right";
+}
+
+.photo-end-placeholder {
+  height: 1.5vh;
+}

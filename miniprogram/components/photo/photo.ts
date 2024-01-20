@@ -1,4 +1,4 @@
-// components/album/album.ts
+// components/photo/photo.ts
 Component({
 
   /**
@@ -13,16 +13,20 @@ Component({
       type: String,
       value: undefined
     },
+    location: {
+      type: String,
+      value: undefined
+    },
     description: {
       type: String,
       value: undefined
     },
-    mainImageUrl: {
+    imageUrl: {
       type: String,
       value: undefined
     },
-    subImageUrls: {
-      type: Array,
+    type: {
+      type: String,
       value: undefined
     }
   },
@@ -38,10 +42,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onViewClick() {
-      wx.navigateTo({
-        url: '/pages/details/details'
-      });
-    }
+
   }
 })
