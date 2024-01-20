@@ -6,12 +6,12 @@
     <p>
       生活中从来没有平凡的时刻，回忆时总能带来新的感动。
       <span><image src='/assets/logos-white-removed.png' style="height: 2.5vw;" mode="heightFix"></image></span>
-      <!-- <view class="index-description-bg"></view> -->
+      <view class="index-description-bg"></view>
     </p>
   </view>
   <view class="index-button" bindtap="onStartClick">开始</view>
 </view>
 
-<view id="index-bg-cache" hidden wx:for="{{bgUrls}}" wx:for-item="bgUrl" wx:key="key">
+<view hidden wx:for="{{bgUrls}}" wx:for-item="bgUrl" wx:key="key">
   <image src="{{bgUrl}}"></image>
 </view>
