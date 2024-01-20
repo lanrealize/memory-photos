@@ -2,7 +2,13 @@
 <view class="general-container">
   <view class="index-background" style="transform: scale({{scale}}); background-image: url({{bg}});"></view>
   <navigation page="index" style="z-index: 1;"></navigation>
-  <view class="index-description"></view>
+  <view class="index-description">
+    <p>
+      生活中从来没有平凡的时刻，回忆时总能带来新的感动。
+      <span><image src='/assets/logos-white-removed.png' style="height: 2.5vw;" mode="heightFix"></image></span>
+      <view class="index-description-bg"></view>
+    </p>
+  </view>
   <view class="index-button" bindtap="onStartClick">开始</view>
 </view>
 

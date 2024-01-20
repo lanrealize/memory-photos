@@ -18,8 +18,25 @@
   transition: background-image 2s ease-in-out; 
 }
 
-.index-title {
-  padding-top: 20vh;
+.index-description {
+  margin-top: 20vh;
+  z-index: 1;
+  width: 80vw;
+  text-align: center;
+
+  position: relative;
+
+  color: white;
+}
+
+.index-description-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  filter: blur(5px);
   z-index: 1;
 }
 
