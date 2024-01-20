@@ -1,0 +1,15 @@
+/* components/index-bottom-menu/index-bottom-menu.wxss */
+.albums-bottom-menu-root {
+  height: 8.5vh;
+  width: 100vw;
+  background: rgba(180, 180, 180, 0.3);
+  backdrop-filter: blur(4px);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  color: black;
+  font-size: 32rpx;
+}

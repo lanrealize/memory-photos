@@ -1,0 +1,7 @@
+/* pages/albums/albums.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(245, 245, 245);
+}

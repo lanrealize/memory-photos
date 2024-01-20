@@ -1,0 +1,104 @@
+/* components/album/album.wxss */
+
+.album-root {
+  width: 90vw;
+  height: 68vw;
+  box-sizing: border-box;
+  background-color: white;
+
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+
+  padding-top: 2.75vw;
+  padding-bottom: 4vw;
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+
+.album-main-title {
+  height: 7vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.album-main-title-part0 {
+  font-size: 40rpx;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+.album-main-title-part1 {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-top: auto;
+  padding-left: 2vw;
+}
+
+.album-description {
+  height: 3.75vw;
+  margin-top: 1vw;
+  font-size: 20rpx;
+  color: #505050;
+  margin-bottom: 1.5vw;
+}
+
+.album-main {
+  display: grid;
+  grid-template-columns: 37vw 2.5vw 42.5vw;
+  /* grid-template-rows: 27.5vw 11.2vw 8.7vw; */
+  grid-template-areas: "main-pic . others";
+  height: 48vw;
+}
+
+.album-main-mainpic {
+  grid-area: main-pic;
+  width: 100%; 
+  height: 100%;
+}
+
+.album-main-others {
+  grid-area: others;
+
+  display: grid;
+  grid-template-rows: 27.5vw 11.5vw 9vw;
+  grid-template-areas: "sub-pics" "copyright" "button";
+}
+
+.album-main-subpics {
+  grid-area: sub-pics;
+
+  display: grid;
+  grid-template-columns: 12.5vw 2.5vw 12.5vw 2.5vw 12.5vw;
+  grid-template-rows: 12.5vw 2.5vw 12.5vw;
+  grid-template-areas: "pic0 . pic1 . pic2" ". . . . ." "pic3 . pic4 . pic5";
+}
+
+.album-main-subpics-instance {
+  width: 100%;
+  height: 100%; 
+}
+
+.album-main-copyright {
+  grid-area: copyright;
+  font-size: 16rpx;
+  line-height: 3.5vw;
+  margin-top: 3.3vw;
+  margin-bottom: 1.2vw;
+}
+
+.album-main-button {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  border-radius: 1000rpx;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.76) 100%);
+  box-shadow: 0px 2px 4px  rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 24rpx;
+}

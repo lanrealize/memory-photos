@@ -67,6 +67,12 @@ Page({
         bgUrls: bgUrls
       });
     }, 500);
+  },
+
+  onStartClick() {
+    wx.navigateTo({
+      url: '/pages/albums/albums'
+    });
   }
 
 })

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "navigation": "/components/navigation/navigation",
+    "album": "/components/album/album",
+    "albums-bottom-menu": "/components/albums-bottom-menu/albums-bottom-menu"
+  },
+  "navigationBarTextStyle": "black",
+  "disableScroll": true
+}
