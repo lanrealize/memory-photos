@@ -1,7 +1,7 @@
 export const bgUrls = [
-  "https://upload-images.jianshu.io/upload_images/15219429-9a26bb5b22176116.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/600/format/webp",
-  "https://upload-images.jianshu.io/upload_images/15219429-b7b4cc1398bc12fb.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/600/format/webp",
-  "https://upload-images.jianshu.io/upload_images/15219429-c724def7f3a0a3df.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp",
-  "https://upload-images.jianshu.io/upload_images/15219429-098ba80f6cd7a1e1.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp",
-  "https://upload-images.jianshu.io/upload_images/15219429-5a4407d920ea8a45.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp"
+  "https://upload-images.jianshu.io/upload_images/15219429-8950836e290475a3.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/600/format/webp",
+  "https://upload-images.jianshu.io/upload_images/15219429-374221497e90fdae.jpeg?imageMogr2/auto-orient/strip|imageView2/2/w/600/format/webp",
+  "https://upload-images.jianshu.io/upload_images/15219429-4db7adec7e9a47fe.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp",
+  "https://upload-images.jianshu.io/upload_images/15219429-b5305b2d0780478c.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp",
+  "https://upload-images.jianshu.io/upload_images/15219429-ad9beb90c6f5bcb4.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp"
 ]

@@ -4,9 +4,8 @@
   <navigation page="index" style="z-index: 1;"></navigation>
   <view class="index-description">
     <p>
-      生活中从来没有平凡的时刻，回忆时总能带来新的感动。
+      生活中从来没有平凡的时刻，回忆总能带给人们新的感动。
       <span><image src='/assets/logos-white-removed.png' style="height: 2.5vw;" mode="heightFix"></image></span>
-      <!-- <view class="index-description-bg"></view> -->
     </p>
   </view>
   <view class="index-button" bindtap="onStartClick">开始</view>
