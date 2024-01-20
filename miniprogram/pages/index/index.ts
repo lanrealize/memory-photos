@@ -6,14 +6,18 @@ Page({
     scale: "1.1",
     bg: "",
     bgUrls: bgUrls,
-    intervalId: ''
+    isShown: false
   },
 
   changeBgWithTimeout(currentIndex: number): void {
-    console.log(`change bg ${currentIndex}, ${new Date().getSeconds()}`);
-    const currentValue = bgUrls[currentIndex];
-    this.setBg(currentValue)
-    currentIndex = (currentIndex + 1) % bgUrls.length;
+    if (this.data.isShown) {
+      console.log(`change bg ${currentIndex}, ${new Date().getSeconds()}`);
+      const currentValue = bgUrls[currentIndex];
+      this.setBg(currentValue)
+      currentIndex = (currentIndex + 1) % bgUrls.length;
+    } else {
+      console.log("not shown pass");
+    }
     setTimeout(() => this.changeBgWithTimeout(currentIndex), 4000);
   },
 
@@ -29,6 +33,12 @@ Page({
     })
   },
 
+  setShown(shown: boolean) {
+    this.setData({
+      isShown: shown
+    });
+  },
+
   onLoad() {
     this.setBg("https://upload-images.jianshu.io/upload_images/15219429-5a4407d920ea8a45.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp");
     setTimeout(() => {
@@ -38,6 +48,7 @@ Page({
   },
 
   onHide() {
+    this.setShown(false);
     console.log('onHide');
   },
 
@@ -46,6 +57,7 @@ Page({
   },
 
   onShow() {
+    this.setShown(true);
     console.log('onShow');
     let bgUrls = this.data.bgUrls;
     let firstElement = bgUrls.shift();
