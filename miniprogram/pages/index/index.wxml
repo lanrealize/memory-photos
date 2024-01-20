@@ -11,6 +11,6 @@
   <view class="index-button" bindtap="onStartClick">开始</view>
 </view>
 
-<view hidden wx:for="{{bgUrls}}" wx:for-item="bgUrl" wx:key="key">
-  <image src="{{bgUrl}}"></image>
+<view hidden wx:for="{{bgUrls}}" wx:for-item="bgUrl" wx:key="key" wx:for-index="index">
+  <image src="{{bgUrl}}" bindload="onImageLoad" data-idx="{{index}}"></image>
 </view>
