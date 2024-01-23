@@ -1,5 +1,6 @@
 // index.ts
-import {bgUrls} from "../../configs/common"
+import {bgUrls} from "../../configs/common";
+import { wxLogin } from "../../utils/util";
 
 Page({
   data: {
@@ -69,7 +70,14 @@ Page({
     }, 500);
   },
 
-  onStartClick() {
+  async onStartClick() {
+    try {
+      const openID = await wxLogin();
+      console.log(openID)
+    } catch (e) {
+
+    }
+
     wx.navigateTo({
       url: '/pages/albums/albums'
     });
