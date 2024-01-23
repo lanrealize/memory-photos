@@ -1,4 +1,4 @@
-<view class="albums-bottom-menu-root" bindtap="onCreateClick">
+<view class="albums-bottom-menu-root">
   <p style="display: flex; flex-direction: row; padding-bottom: 1.5vh;">
     <span style="display: flex; align-items: center;">
       <image src='/assets/icons/edit.svg' style="width: 35rpx; height: 35rpx; padding-right: 0.5vw;" mode="heightFix"></image>
