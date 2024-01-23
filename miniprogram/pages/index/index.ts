@@ -1,6 +1,6 @@
 // index.ts
 import {bgUrls} from "../../configs/common";
-import { wxLogin } from "../../utils/util";
+import { wxLogin } from "../../utils/utils";
 
 Page({
   data: {

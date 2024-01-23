@@ -42,12 +42,11 @@ export const uploadImage = (): void => {
     mediaType: ['image'],
     sourceType: ['album', 'camera'],
     success: (res: any) => {
-      console.log(res)
-      var array = wx.getFileSystemManager().readFileSync(res.tempFiles[0].tempFilePath);
-      var r = myexif.handleBinaryFile(array);
-      console.log(r);
+      console.log('get image successfully');
+      const picturePath = res.tempFiles[0].tempFilePath;
+      wx.setStorageSync('picPath', picturePath)
     },
-    fail: (e) => { 
+    fail: (e) => {
       console.log('get image failed')
       console.log(e)
     }

@@ -1,5 +1,5 @@
 // components/index-bottom-menu/index-bottom-menu.ts
-import { uploadImage } from "../../utils/util"
+import { uploadImage } from "../../utils/utils"
 
 Component({
 
