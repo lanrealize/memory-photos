@@ -6,12 +6,12 @@
   </view>
   <view class="album-description">{{description}}</view>
   <view class="album-main">
-    <image class="album-main-mainpic" src="{{mainImageUrl}}" mode="aspectFill"></image>
+    <!-- <image class="album-main-mainpic" src="{{mainImageUrl}}" mode="aspectFill"></image> -->
     <view class="album-main-others">
       <view class="album-main-subpics">
-        <image class="album-main-subpics-instance" style="grid-area: pic0;" src="{{subImageUrls[0]}}" mode="aspectFill"></image>
+        <!-- <image class="album-main-subpics-instance" style="grid-area: pic0;" src="{{subImageUrls[0]}}" mode="aspectFill"></image>
         <image class="album-main-subpics-instance" style="grid-area: pic1;" src="{{subImageUrls[1]}}" mode="aspectFill"></image>
-        <image class="album-main-subpics-instance" style="grid-area: pic2;" src="{{subImageUrls[2]}}" mode="aspectFill"></image>
+        <image class="album-main-subpics-instance" style="grid-area: pic2;" src="{{subImageUrls[2]}}" mode="aspectFill"></image> -->
         <view style="grid-area: pic3; background-color: darkgray;"></view>
         <view style="grid-area: pic4; background-color: darkgray;"></view>
         <view style="grid-area: pic5; background-color: darkgray;"></view>
