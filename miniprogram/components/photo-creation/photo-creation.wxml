@@ -7,10 +7,11 @@
     <image src="/assets/icons/refresh.svg" class="photo-creation-description-action-item"></image>
   </view>
   <image src="{{photoPath}}" class="photo-creation-image" mode="aspectFill"></image> -->
-  <picker-view indicator-style="height: 30px;" style="width: 100%; height: 100px;" bindchange="bindChange">
+  <picker-view indicator-style="height: 30px;" style="width: 100%; height: 70px;" bindchange="bindChange">
     <picker-view-column>
-      <view style="line-height: 50px; text-align: center;">2023年</view>
-      <view style="line-height: 50px; text-align: center;">2024年</view>
+      <view style="line-height: 30px; text-align: center;">2022年</view>
+      <view style="line-height: 30px; text-align: center;">2023年</view>
+      <view style="line-height: 30px; text-align: center;">2024年</view>
     </picker-view-column>
     <picker-view-column>
       <view style="line-height: 50px; text-align: center;">1月</view>
