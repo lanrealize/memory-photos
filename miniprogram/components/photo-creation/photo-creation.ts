@@ -1,6 +1,4 @@
-// components/index-bottom-menu/index-bottom-menu.ts
-import { uploadImage } from "../../utils/utils"
-
+// components/photo-creation/photo-creation.ts
 Component({
 
   /**
@@ -21,8 +19,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onCreateClick() {
-      // uploadImage();
-    }
+
   }
 })

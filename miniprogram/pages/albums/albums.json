@@ -2,7 +2,8 @@
   "usingComponents": {
     "navigation": "/components/navigation/navigation",
     "album": "/components/album/album",
-    "albums-bottom-menu": "/components/albums-bottom-menu/albums-bottom-menu"
+    "albums-bottom-menu": "/components/albums-bottom-menu/albums-bottom-menu",
+    "photo-creation": "/components/photo-creation/photo-creation"
   },
   "navigationBarTextStyle": "black",
   "disableScroll": true

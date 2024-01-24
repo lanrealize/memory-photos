@@ -5,14 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    top: "100"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    const app: IAppOption = getApp();
+    app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
+    console.log("add subscriber")
   },
 
   /**
@@ -62,5 +64,21 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  onCreateClick() {
+    const app: IAppOption = getApp();
+    app.setPhotoCreationShown(true);
+  },
+
+  onCreateClick2() {
+    const app: IAppOption = getApp();
+    app.setPhotoCreationShown(false);
+  },
+
+  setPhotoCreationDisplay(shown: boolean): void {
+    this.setData({
+      top: shown? "0" : "100"
+    })
   }
 })

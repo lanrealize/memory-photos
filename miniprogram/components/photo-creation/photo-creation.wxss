@@ -1,0 +1,6 @@
+/* components/photo-creation/photo-creation.wxss */
+.photo-creation-root {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(255, 255, 255);
+}
