@@ -34,5 +34,13 @@ Component({
       app.globalData.photoCreationPath.subscribers.push(this.setPhotoPath);
       console.log("Add subscriber for updated photo path.");
     },
+
+    attached: function () {
+      const app: IAppOption = getApp();
+      this.setData({
+        menuHeight: app.globalData.navigationInfo.menuHeight,
+        menuTop: app.globalData.navigationInfo.menuTop,
+      })
+    }
   }
 })
