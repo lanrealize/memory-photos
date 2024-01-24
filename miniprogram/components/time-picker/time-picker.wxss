@@ -1,0 +1,24 @@
+/* components/time-picker/time-picker.wxss */
+.time-picker-root {
+  padding-left: 8vw;
+  padding-right: 8vw;
+
+  display: grid;
+  grid-template-columns: 6vw 78vw;
+  grid-template-areas: "picker-icon picker-date";
+}
+
+.time-picker-icon {
+  grid-area: picker-icon;
+  width: 6vw;
+  height: 6vw;
+}
+
+.time-picker-date {
+  grid-area: picker-date;
+}
+
+.time-picker-column-item {
+  line-height: 30px;
+  text-align: center;
+}
