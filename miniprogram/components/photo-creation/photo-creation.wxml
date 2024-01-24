@@ -7,5 +7,8 @@
     <image src="/assets/icons/refresh.svg" class="photo-creation-description-action-item"></image>
   </view>
   <image src="{{photoPath}}" class="photo-creation-image" mode="aspectFill"></image>
-  <time-picker></time-picker>
+  <view class="photo-creation-time-picker">
+    <time-picker></time-picker>
+  </view>
+
 </view>

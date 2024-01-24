@@ -38,3 +38,7 @@
   height: 30vh;
   width: 30vh;
 }
+
+.photo-creation-time-picker {
+  margin-top: 2vh;
+}

@@ -2,23 +2,29 @@
 <view class="time-picker-root">
   <image class="time-picker-icon" src="/assets/icons/date.svg"></image>
 
-
-
-</view>
-
-<picker-view indicator-style="height: 30px;" class="time-picker-date" style="height: 70px;" bindchange="bindChange">
-  <picker-view-column>
-    <view class="time-picker-column-item">2022年</view>
-    <view class="time-picker-column-item">2023年</view>
-    <view class="time-picker-column-item">2024年</view>
-  </picker-view-column>
-  <!-- <p style="padding-top: 22px;">:</p> -->
-  <!-- <picker-view-column>
+  <picker-view indicator-class="time-picker-indicator" class="time-picker-date" bindchange="bindChange">
+    <picker-view-column style="flex: 0 0 30%;">
+      <view class="time-picker-column-item">2022年</view>
+      <view class="time-picker-column-item">2023年</view>
+      <view class="time-picker-column-item">2024年</view>
+    </picker-view-column>
+    <picker-view-column>
       <view class="time-picker-column-item">1月</view>
       <view class="time-picker-column-item">2月</view>
     </picker-view-column>
     <picker-view-column>
       <view class="time-picker-column-item">1日</view>
       <view class="time-picker-column-item">2日</view>
-    </picker-view-column> -->
-</picker-view>
+    </picker-view-column>
+    <picker-view-column>
+      <view class="time-picker-column-item">01</view>
+      <view class="time-picker-column-item">02</view>
+    </picker-view-column>
+    <p style="margin: auto; line-height: 25px;">:</p>
+    <picker-view-column>
+      <view class="time-picker-column-item">23</view>
+      <view class="time-picker-column-item">24</view>
+    </picker-view-column>
+  </picker-view>
+
+</view>
