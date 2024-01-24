@@ -21,8 +21,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onCreateClick() {
-      // uploadImage();
+    async onCreateClick() {
+      const imagePath = await uploadImage();
+      const app: IAppOption = getApp();
+      app.setPhotoCreationPath(imagePath);
+      app.setPhotoCreationShown(true);
     }
   }
 })

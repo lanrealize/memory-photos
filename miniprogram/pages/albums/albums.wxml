@@ -11,8 +11,7 @@
     </view>
   </scroll-view>
 </view>
-<view style="position: fixed; bottom: 0;" bindtap="onCreateClick">
+<view style="position: fixed; bottom: 0;">
   <albums-bottom-menu></albums-bottom-menu>
 </view>
-<!-- <photo-creation bindtap="onCreateClick2" style="border-radius: 2vh; position: fixed; top: {{top}}vh; transition: top 0.85s cubic-bezier(0.2,1,0,1);"></photo-creation> -->
-<photo-creation bindtap="onCreateClick2" style="border-radius: 2vh; position: fixed; top: {{top}}vh; transition: top 0.7s cubic-bezier(.2,1,0,1);"></photo-creation>
+<photo-creation bindtap="onCreateClick2" style="border-radius: 2vh; position: fixed; top: {{top}}vh; transition: top 0.8s cubic-bezier(.2,1,0,1);"></photo-creation>

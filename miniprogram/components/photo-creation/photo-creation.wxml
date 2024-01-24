@@ -1,4 +1,5 @@
 <!--components/photo-creation/photo-creation.wxml-->
 <view class="photo-creation-root">
-  <image src="/assets/test.jpg" style="width: 100vw; height: 100vh;"></image>
+  <view class="photo-creation-description"></view>
+  <!-- <image src="{{photoPath}}" style="width: 100vw; height: 100vh;"></image> -->
 </view>

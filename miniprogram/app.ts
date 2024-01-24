@@ -1,12 +1,16 @@
 // app.ts
 App<IAppOption>({
-  
+
   globalData: {
     navigationInfo: {
       menuHeight: undefined,
       menuTop: undefined
     },
     photoCreationShown: {
+      value: undefined,
+      subscribers: []
+    },
+    photoCreationPath: {
       value: undefined,
       subscribers: []
     }
@@ -26,5 +30,10 @@ App<IAppOption>({
     this.globalData.photoCreationShown.value = data;
     this.globalData.photoCreationShown.subscribers.forEach((callback: (data: boolean) => void) => callback(data));
   },
+
+  setPhotoCreationPath(data: string) {
+    this.globalData.photoCreationPath.value = data;
+    this.globalData.photoCreationPath.subscribers.forEach((callback: (data: string) => void) => callback(data));
+  }
 
 })
