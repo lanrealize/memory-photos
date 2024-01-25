@@ -18,7 +18,8 @@ Component({
     months: [] as string[],
     days: [] as string[],
     hours: [] as string[],
-    minutes: [] as string[]
+    minutes: [] as string[],
+    value: [] as number[]
   },
 
   /**
@@ -34,12 +35,41 @@ Component({
         'hours': dateSelections.hours,
         'minutes': dateSelections.minutes
       })
+    },
+
+    generateInitialPickerValue() {
+      const currentDate = new Date();
+      const currentYear = currentDate.getFullYear().toString();
+      const currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+      const currentDay = currentDate.getDate().toString().padStart(2, '0');
+      const currentHour = currentDate.getHours().toString().padStart(2, '0');
+      const currentMinute = currentDate.getMinutes().toString().padStart(2, '0');
+
+      return [
+        this.data.years.indexOf(currentYear),
+        this.data.months.indexOf(currentMonth),
+        this.data.days.indexOf(currentDay),
+        this.data.hours.indexOf(currentHour),
+        this.data.minutes.indexOf(currentMinute)
+      ]
+    },
+
+    setPickerInitialValue() {
+      const initialValue = this.generateInitialPickerValue();
+      this.setData({
+        value: initialValue
+      })
+    },
+
+    bindChange() {
+
     }
   },
 
   lifetimes: {
     attached() {
       this.setDateSelectionInitialValues();
+      this.setPickerInitialValue();
     }
   }
 })

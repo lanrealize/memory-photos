@@ -56,7 +56,7 @@
 }
 
 .photo-creation-location {
-  padding-top: 1.5vh;
+  padding-top: 2.5vh;
   padding-left: 8vw;
   padding-right: 8vw;
   display: grid;
