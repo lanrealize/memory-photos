@@ -58,3 +58,19 @@ export const uploadImage = (): Promise<string> => {
     }
   })
 }
+
+export const getDateSelections = () => {
+  const years = Array.from({ length: 55 }, (_, index) => (index + 1970).toString());
+  const months = Array.from({ length: 12 }, (_, index) => (index + 1).toString().padStart(2, '0'));
+  const days = Array.from({ length: 31 }, (_, index) => (index + 1).toString().padStart(2, '0'));
+  const hours = Array.from({ length: 24 }, (_, index) => index.toString().padStart(2, '0'));
+  const minutes = Array.from({ length: 60 }, (_, index) => index.toString().padStart(2, '0'));
+
+  return {
+    years: years,
+    months: months,
+    days: days,
+    hours: hours,
+    minutes: minutes
+  }
+}

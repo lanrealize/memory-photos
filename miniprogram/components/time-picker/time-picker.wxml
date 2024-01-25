@@ -4,9 +4,7 @@
 
   <picker-view indicator-class="time-picker-indicator" class="time-picker-date" bindchange="bindChange">
     <picker-view-column style="flex: 0 0 24%;">
-      <view class="time-picker-column-item">2022年</view>
-      <view class="time-picker-column-item">2023年</view>
-      <view class="time-picker-column-item">2024年</view>
+      <view wx:for="{{years}}" wx:key="{{years}}" class="time-picker-column-item">{{item}}年</view>
     </picker-view-column>
     <p class="time-picker-p">/</p>
     <picker-view-column style="flex: 0 0 19%;">
