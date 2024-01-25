@@ -14,11 +14,11 @@ Component({
    * 组件的初始数据
    */
   data: {
-    years: [],
-    months: [],
-    days: [],
-    hours: [],
-    minutes: []
+    years: [] as string[],
+    months: [] as string[],
+    days: [] as string[],
+    hours: [] as string[],
+    minutes: [] as string[]
   },
 
   /**
@@ -28,11 +28,11 @@ Component({
     setDateSelectionInitialValues() {
       const dateSelections = getDateSelections();
       this.setData({
-        'data.years': dateSelections.years,
-        'data.months': dateSelections.months,
-        'data.days': dateSelections.days,
-        'data.hours': dateSelections.hours,
-        'data.minutes': dateSelections.minutes
+        'years': dateSelections.years,
+        'months': dateSelections.months,
+        'days': dateSelections.days,
+        'hours': dateSelections.hours,
+        'minutes': dateSelections.minutes
       })
     }
   },

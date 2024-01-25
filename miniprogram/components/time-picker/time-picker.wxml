@@ -4,30 +4,32 @@
 
   <picker-view indicator-class="time-picker-indicator" class="time-picker-date" bindchange="bindChange">
     <picker-view-column style="flex: 0 0 24%;">
-      <view wx:for="{{years}}" wx:key="{{years}}" class="time-picker-column-item">{{item}}年</view>
+      <view wx:for="{{years}}" wx:for-item="year" wx:key="key" wx:for-index="index" class="time-picker-column-item">
+        {{year}}年
+      </view>
     </picker-view-column>
     <p class="time-picker-p">/</p>
     <picker-view-column style="flex: 0 0 19%;">
-      <view class="time-picker-column-item">01月</view>
-      <view class="time-picker-column-item">02月</view>
-      <view class="time-picker-column-item">03月</view>
+      <view wx:for="{{months}}" wx:for-item="month" wx:key="key" wx:for-index="index" class="time-picker-column-item">
+        {{month}}月
+      </view>
     </picker-view-column>
     <p class="time-picker-p">/</p>
     <picker-view-column style="flex: 0 0 19%;">
-      <view class="time-picker-column-item">01日</view>
-      <view class="time-picker-column-item">02日</view>
-      <view class="time-picker-column-item">03日</view>
+      <view wx:for="{{days}}" wx:for-item="day" wx:key="key" wx:for-index="index" class="time-picker-column-item">
+        {{day}}日
+      </view>
     </picker-view-column>
     <picker-view-column>
-      <view class="time-picker-column-item">01</view>
-      <view class="time-picker-column-item">02</view>
-      <view class="time-picker-column-item">03</view>
+      <view wx:for="{{hours}}" wx:for-item="hour" wx:key="key" wx:for-index="index" class="time-picker-column-item">
+        {{hour}}
+      </view>
     </picker-view-column>
     <p class="time-picker-p">:</p>
     <picker-view-column>
-      <view class="time-picker-column-item">23</view>
-      <view class="time-picker-column-item">24</view>
-      <view class="time-picker-column-item">25</view>
+      <view wx:for="{{minutes}}" wx:for-item="minute" wx:key="key" wx:for-index="index" class="time-picker-column-item">
+        {{minute}}
+      </view>
     </picker-view-column>
   </picker-view>
 
