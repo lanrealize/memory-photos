@@ -1,6 +1,12 @@
 <!--components/photo-creation/photo-creation.wxml-->
 <view class="photo-creation-root">
-  <view class="photo-creation-cancel" style="padding-top: {{menuTop}}px; height: {{menuHeight}}px;">取消</view>
+  <view class="photo-creation-title" style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px;">
+    <view>取消</view>
+
+    <view class="photo-creation-submit" style="line-height: {{menuHeight}}px; display: flex;">
+      <view style="margin: auto;">添加</view>
+    </view>
+  </view>
   <view class="photo-creation-description">最近认识了很多人，但我知道他们都不是你。...</view>
   <view class="photo-creation-description-action">
     <image src="/assets/icons/edit_gray.svg" class="photo-creation-description-action-item" style="margin-left: auto;"></image>
@@ -11,13 +17,16 @@
     <time-picker></time-picker>
   </view>
   <view class="photo-creation-location">
-    <image src="/assets/icons/location_light.svg" class="photo-creation-location-icon"></image>
+    <image src="/assets/icons/location_e.svg" class="photo-creation-location-icon"></image>
     <view class="photo-creation-location-text">未获得位置信息</view>
   </view>
-  <!-- <view class="photo-creation-copyright">
-    <p>© 该相册中所有照片版权属于作者，如需转载以及商务合作请联系客服。<span>
-        <image src='/assets/logos.png' style="height: 1.8vw; padding-left: vw;" mode="heightFix"></image>
-      </span></p>
+  <!-- <view class="photo-creation-bottom">
+    <view class="photo-creation-copyright">
+      <p>© 该照片版全属于作者。<span>
+          <image src='/assets/logos.png' style="height: 2.5vw; padding-left: vw;" mode="heightFix"></image>
+        </span></p>
+    </view>
   </view> -->
+
 
 </view>

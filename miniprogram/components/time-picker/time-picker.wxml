@@ -1,6 +1,6 @@
 <!--components/time-picker/time-picker.wxml-->
 <view class="time-picker-root">
-  <image class="time-picker-icon" src="/assets/icons/date_vertical.svg"></image>
+  <image class="time-picker-icon" src="/assets/icons/date.svg"></image>
 
   <picker-view indicator-class="time-picker-indicator" class="time-picker-date" bindchange="bindChange">
     <picker-view-column style="flex: 0 0 24%;">
