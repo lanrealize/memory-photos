@@ -10,5 +10,14 @@
   <view class="photo-creation-time-picker">
     <time-picker></time-picker>
   </view>
+  <view class="photo-creation-location">
+    <image src="/assets/icons/location_light.svg" class="photo-creation-location-icon"></image>
+    <view class="photo-creation-location-text">未获得位置信息</view>
+  </view>
+  <!-- <view class="photo-creation-copyright">
+    <p>© 该相册中所有照片版权属于作者，如需转载以及商务合作请联系客服。<span>
+        <image src='/assets/logos.png' style="height: 1.8vw; padding-left: vw;" mode="heightFix"></image>
+      </span></p>
+  </view> -->
 
 </view>

@@ -4,7 +4,7 @@
   padding-right: 8vw;
 
   display: grid;
-  grid-template-columns: 6vw 2vw 76vw;
+  grid-template-columns: 6vw 3vw 78vw;
   grid-template-areas: "picker-icon . picker-date";
 }
 
@@ -17,17 +17,17 @@
 
 .time-picker-date {
   grid-area: picker-date;
-  height: 50px;
-  width: 76vw;
+  height: 6vh;
+  width: 75vw;
 }
 
 .time-picker-column-item {
-  line-height: 25px;
+  line-height: 3vh;
   text-align: center;
 }
 
 .time-picker-indicator {
-  height: 25px;
+  height: 3vh;
   position: relative;
 }
 
@@ -43,4 +43,16 @@
   position: absolute;
   bottom: 0;
   border: none;
+}
+
+.time-picker-p {
+  margin: auto;
+  line-height: 3vh;
+}
+
+.time-picker-seperate-line {
+  margin: auto;
+  background-color: gray;
+  width: 0.3vw;
+  height: 1.5vh;
 }
