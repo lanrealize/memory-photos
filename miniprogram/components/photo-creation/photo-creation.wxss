@@ -14,20 +14,33 @@
 }
 
 .photo-creation-submit {
-  width: 20vw;
+  width: 15vw;
   background-color: #000000;
-  margin-top: auto;
-  margin-bottom: auto;
-  border-radius: 5px;
+  border-radius: 3px;
   color: white;
+  margin-right: 0;
   margin-left: 5vw;
+}
+
+.photo-creation-cancel {
+  border-radius: 3px;
+  margin-left: auto;
+  /* border: solid 1px black; */
+}
+
+.photo-creation-actions {
+  padding-left: 8vw;
+  padding-right: 8vw;
+  display: flex;
+  flex-direction: row;
+  margin-top: 2vh;
 }
 
 .photo-creation-description {
   color: #A6A6A6;
   padding-left: 8vw;
   padding-right: 8vw;
-  padding-top: 5vh;
+  padding-top: 3vh;
   font-size: 36rpx;
 }
 
