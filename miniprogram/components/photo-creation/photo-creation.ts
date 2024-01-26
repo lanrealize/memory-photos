@@ -30,6 +30,11 @@ Component({
       this.setData({
         photoDescription: description
       })
+    },
+
+    onCancelClick() {
+      const app: IAppOption = getApp();
+      app.setPhotoCreationShown(false);
     }
   },
 

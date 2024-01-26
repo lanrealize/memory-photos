@@ -8,7 +8,7 @@
   </view>
   <view class="photo-creation-actions">
     <view class="photo-creation-cancel" style="line-height: {{menuHeight}}px; display: flex;">
-      <view style="margin: auto;">取消</view>
+      <view style="margin: auto;" bindtap="onCancelClick">取消</view>
     </view>
     <view class="photo-creation-submit" style="line-height: {{menuHeight}}px; display: flex;">
       <view style="margin: auto;">添加</view>

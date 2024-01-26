@@ -68,11 +68,6 @@ Page({
 
   },
 
-  onCreateClick2() {
-    const app: IAppOption = getApp();
-    app.setPhotoCreationShown(false);
-  },
-
   setPhotoCreationDisplay(shown: boolean): void {
     this.setData({
       top: shown ? "0" : "100"

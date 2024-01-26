@@ -14,4 +14,4 @@
 <view style="position: fixed; bottom: 0;">
   <albums-bottom-menu></albums-bottom-menu>
 </view>
-<photo-creation bindtap="onCreateClick2" class="albums-photo-creation" style="top: {{top}}vh;"></photo-creation>
+<photo-creation class="albums-photo-creation" style="top: {{top}}vh;"></photo-creation>

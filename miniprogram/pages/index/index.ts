@@ -1,5 +1,5 @@
 // index.ts
-import {bgUrls} from "../../configs/common";
+import { bgUrls } from "../../configs/common";
 import { wxLogin } from "../../utils/utils";
 
 Page({
@@ -12,12 +12,13 @@ Page({
 
   changeBgWithTimeout(currentIndex: number): void {
     if (this.data.isShown) {
-      console.log(`change bg ${currentIndex}, ${new Date().getSeconds()}`);
+      // console.log(`change bg ${currentIndex}, ${new Date().getSeconds()}`);
       const currentValue = bgUrls[currentIndex];
       this.setBg(currentValue)
       currentIndex = (currentIndex + 1) % bgUrls.length;
     } else {
-      console.log("not shown pass");
+      // console.log("not shown pass");
+      return;
     }
     setTimeout(() => this.changeBgWithTimeout(currentIndex), 4000);
   },
@@ -45,21 +46,21 @@ Page({
     setTimeout(() => {
       this.changeBgWithTimeout(0);
     }, 500);
-    console.log('onLoad');
+    // console.log('onLoad');
   },
 
   onHide() {
     this.setShown(false);
-    console.log('onHide');
+    // console.log('onHide');
   },
 
   onImageLoad(event: any) {
-    console.log(event.currentTarget.dataset.idx);
+    // console.log(event.currentTarget.dataset.idx);
   },
 
   onShow() {
     this.setShown(true);
-    console.log('onShow');
+    // console.log('onShow');
     let bgUrls = this.data.bgUrls;
     let firstElement = bgUrls.shift();
     bgUrls.push(firstElement as string);
