@@ -37,7 +37,7 @@ Component({
       })
     },
 
-    generateInitialPickerValue() {
+    setPickerInitialValue() {
       const currentDate = new Date();
       const currentYear = currentDate.getFullYear().toString();
       const currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0');
@@ -45,42 +45,40 @@ Component({
       const currentHour = currentDate.getHours().toString().padStart(2, '0');
       const currentMinute = currentDate.getMinutes().toString().padStart(2, '0');
 
-      return [
-        this.data.years.indexOf(currentYear),
-        this.data.months.indexOf(currentMonth),
-        this.data.days.indexOf(currentDay),
-        this.data.hours.indexOf(currentHour),
-        this.data.minutes.indexOf(currentMinute)
-      ]
-    },
-
-    setPickerInitialValue() {
-      const initialValue = this.generateInitialPickerValue();
       const app: IAppOption = getApp();
-      app.setPhotoCreationTimestamp(initialValue);
+      app.setPhotoCreationTimestamp(this.concateDateStrings(currentYear, currentMonth, currentDay, currentHour, currentMinute));
     },
 
-    setValue(value: number[]) {
+    setValue(date: string) {
+      const indices = this.getIndicesFromDate(date);
       this.setData({
-        value: value
+        value: indices
       });
     },
 
     getDateFromIndices(indices: number[]) {
-      return {
-        year: this.data.years[indices[0]],
-        month: this.data.months[indices[1]],
-        day: this.data.days[indices[2]],
-        hour: this.data.hours[indices[3]],
-        minute: this.data.minutes[indices[4]]
-      }
+      return this.concateDateStrings(this.data.years[indices[0]], this.data.months[indices[1]], this.data.days[indices[2]], this.data.hours[indices[3]], this.data.minutes[indices[4]])
+    },
+
+    concateDateStrings(year: string, month: string, day: string, hour: string, minute: string) {
+      return `${year}-${month}-${day}-${hour}-${minute}`
+    },
+
+    getIndicesFromDate(date: string) {
+      const dateArray = date.split('-');
+      return [
+        this.data.years.indexOf(dateArray[0]),
+        this.data.months.indexOf(dateArray[1]),
+        this.data.days.indexOf(dateArray[2]),
+        this.data.hours.indexOf(dateArray[3]),
+        this.data.minutes.indexOf(dateArray[4])
+      ]
     },
 
     bindChange(event: any) {
       const indices = event.detail.value;
-      this.setData({
-        value: indices
-      });
+      const app: IAppOption = getApp();
+      app.setPhotoCreationTimestamp(this.getDateFromIndices(indices));
     }
   },
 

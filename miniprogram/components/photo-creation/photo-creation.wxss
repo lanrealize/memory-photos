@@ -28,7 +28,7 @@
 
 .photo-creation-actions {
   padding-left: 8vw;
-  padding-right: 7vw;
+  padding-right: 6vw;
   display: flex;
   flex-direction: row;
   margin-top: 2vh;

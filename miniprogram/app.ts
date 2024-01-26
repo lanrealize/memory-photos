@@ -40,9 +40,9 @@ App<IAppOption>({
     this.globalData.photoCreationPath.subscribers.forEach((callback: (data: string) => void) => callback(data));
   },
 
-  setPhotoCreationTimestamp(value: number[]) {
-    this.globalData.photoCreationTimestamp.value = value;
-    this.globalData.photoCreationTimestamp.subscribers.forEach((callback: (value: number[]) => void) => callback(value));
+  setPhotoCreationTimestamp(date: string) {
+    this.globalData.photoCreationTimestamp.value = date;
+    this.globalData.photoCreationTimestamp.subscribers.forEach((callback: (value: string) => void) => callback(date));
   }
 
 })
