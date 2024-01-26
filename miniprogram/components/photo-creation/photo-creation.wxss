@@ -18,13 +18,12 @@
   background-color: #000000;
   border-radius: 3px;
   color: white;
-  margin-right: 0;
+  margin-right: auto;
   margin-left: 5vw;
 }
 
 .photo-creation-cancel {
   border-radius: 3px;
-  margin-left: auto;
   /* border: solid 1px black; */
 }
 
@@ -90,7 +89,7 @@
 .photo-creation-copyright {
   padding-left: 8vw;
   padding-right: 25vw;
-  padding-top: 10vh;
+  padding-top: 4vh;
   font-size: 22rpx;
 }
 

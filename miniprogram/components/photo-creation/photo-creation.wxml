@@ -27,12 +27,10 @@
     <image src="/assets/icons/location_e.svg" class="photo-creation-location-icon"></image>
     <view class="photo-creation-location-text">未获得位置信息</view>
   </view>
-  <!-- <view class="photo-creation-bottom">
-    <view class="photo-creation-copyright">
-      <p>© 该照片版全属于作者。<span>
-          <image src='/assets/logos.png' style="height: 2.5vw; padding-left: vw;" mode="heightFix"></image>
-        </span></p>
-    </view>
+  <!-- <view class="photo-creation-copyright">
+    <p>© 该照片版全属于作者。<span>
+        <image src='/assets/logos.png' style="height: 2.5vw; padding-left: vw;" mode="heightFix"></image>
+      </span></p>
   </view> -->
   <!-- <view class="photo-creation-bottom-submit">
     <p style="color: white; margin: auto;">添加</p>

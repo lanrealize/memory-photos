@@ -5,3 +5,9 @@ page {
   flex-direction: column;
   background-color: rgb(245, 245, 245);
 }
+
+.albums-photo-creation {
+  border-radius: 2vh;
+  position: fixed;
+  transition: top 0.8s cubic-bezier(.2, 1, 0, 1);
+}

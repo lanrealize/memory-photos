@@ -1,6 +1,6 @@
 /* components/index-bottom-menu/index-bottom-menu.wxss */
 .albums-bottom-menu-root {
-  height: 8.5vh;
+  height: 9.5vh;
   width: 100vw;
   background: rgba(180, 180, 180, 0.3);
   backdrop-filter: blur(4px);
