@@ -6,7 +6,8 @@ interface IAppOption {
     navigationInfo?: any,
     photoCreationShown?: any,
     photoCreationPath?: any,
-    photoCreationTimestamp?: any
+    photoCreationTimestamp?: any,
+    photoCreationDescription?: any
   }
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback,
 
@@ -16,5 +17,7 @@ interface IAppOption {
 
   setPhotoCreationPath?: any,
 
-  setPhotoCreationTimestamp?: any
+  setPhotoCreationTimestamp?: any,
+
+  setPhotoCreationDescription?: any
 }

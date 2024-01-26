@@ -12,7 +12,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    photoPath: ''
+    photoPath: '',
+    photoDescription: ''
   },
 
   /**
@@ -23,16 +24,23 @@ Component({
       this.setData({
         photoPath: path
       })
+    },
+
+    setPhotoDescription(description: string) {
+      this.setData({
+        photoDescription: description
+      })
     }
   },
 
   lifetimes: {
     created: function () {
       this.setPhotoPath = this.setPhotoPath.bind(this);
+      this.setPhotoDescription = this.setPhotoDescription.bind(this);
 
       const app: IAppOption = getApp();
       app.globalData.photoCreationPath.subscribers.push(this.setPhotoPath);
-      console.log("Add subscriber for updated photo path.");
+      app.globalData.photoCreationDescription.subscribers.push(this.setPhotoDescription);
     },
 
     attached: function () {
@@ -40,7 +48,8 @@ Component({
       this.setData({
         menuHeight: app.globalData.navigationInfo.menuHeight,
         menuTop: app.globalData.navigationInfo.menuTop,
-      })
+      });
+      app.setPhotoCreationDescription('最近认识了很多人，但我知道他们都不是你。');
     }
   }
 })

@@ -14,7 +14,7 @@
       <view style="margin: auto;">添加</view>
     </view>
   </view>
-  <view class="photo-creation-description">最近认识了很多人，但我知道他们都不是你。...</view>
+  <view class="photo-creation-description">{{photoDescription}}...</view>
   <view class="photo-creation-description-action">
     <image src="/assets/icons/edit_gray.svg" class="photo-creation-description-action-item" style="margin-left: auto;"></image>
     <image src="/assets/icons/refresh.svg" class="photo-creation-description-action-item"></image>

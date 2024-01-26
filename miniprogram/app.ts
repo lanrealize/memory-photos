@@ -17,6 +17,10 @@ App<IAppOption>({
     photoCreationTimestamp: {
       value: undefined,
       subscribers: []
+    },
+    photoCreationDescription: {
+      value: undefined,
+      subscribers: []
     }
   },
 
@@ -43,6 +47,11 @@ App<IAppOption>({
   setPhotoCreationTimestamp(date: string) {
     this.globalData.photoCreationTimestamp.value = date;
     this.globalData.photoCreationTimestamp.subscribers.forEach((callback: (value: string) => void) => callback(date));
+  },
+
+  setPhotoCreationDescription(description: string) {
+    this.globalData.photoCreationDescription.value = description;
+    this.globalData.photoCreationDescription.subscribers.forEach((callback: (value: string) => void) => callback(description));
   }
 
 })
