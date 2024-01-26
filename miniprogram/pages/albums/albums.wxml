@@ -1,17 +1,14 @@
 <!--pages/albums/albums.wxml-->
 <view style="display: flex; flex-direction: column; height: 100vh;">
   <navigation page="albums"></navigation>
-  <scroll-view class="scrollarea" scroll-y type="list" style="flex: 1; height: 0;">
+  <!-- <scroll-view class="scrollarea" scroll-y type="list" style="flex: 1; height: 0;">
     <view class="general-container">
       <album title="8月" subTitle="2023·广州" description="我开始没有了期待，但如果你来，我一定会喜笑颜开。" subImageUrls="{{['/assets/trip.jpg', '/assets/trip2.jpg', '/assets/trip3.jpg']}}" mainImageUrl="/assets/trip3.jpg"></album>
-      <album></album>
-      <album></album>
-      <album></album>
-      <album></album>
     </view>
-  </scroll-view>
+  </scroll-view> -->
+  <empty-state></empty-state>
 </view>
-<view style="position: fixed; bottom: 0;">
+<!-- <view style="position: fixed; bottom: 0;">
   <albums-bottom-menu></albums-bottom-menu>
-</view>
+</view> -->
 <photo-creation class="albums-photo-creation" style="top: {{top}}vh;"></photo-creation>

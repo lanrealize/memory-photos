@@ -1,0 +1,38 @@
+/* components/albums-empty-state/albums-empty-state.wxss */
+.empty-state-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-state-image {
+  width: 39.5vh;
+  height: 39.5vh;
+  padding-top: 6vh;
+}
+
+.empty-state-main-title {
+  font-size: 38rpx;
+  font-weight: 500;
+  padding-top: 4vh;
+}
+
+.empty-state-sub-title {
+  padding-top: 2.5vh;
+  text-align: center;
+  width: 80vw;
+  font-size: 25rpx;
+  color: rgb(150, 150, 150);
+}
+
+.empty-state-button {
+  width: 45vw;
+  height: 4.5vh;
+  border-radius: 2.25vh;
+  background-color: black;
+  margin-top: 8.5vh;
+  color: white;
+  text-align: center;
+  line-height: 4.5vh;
+}
