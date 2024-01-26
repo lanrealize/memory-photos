@@ -56,9 +56,14 @@ Component({
 
     setPickerInitialValue() {
       const initialValue = this.generateInitialPickerValue();
+      const app: IAppOption = getApp();
+      app.setPhotoCreationTimestamp(initialValue);
+    },
+
+    setValue(value: number[]) {
       this.setData({
-        value: initialValue
-      })
+        value: value
+      });
     },
 
     getDateFromIndices(indices: number[]) {
@@ -80,6 +85,12 @@ Component({
   },
 
   lifetimes: {
+    created() {
+      this.setValue = this.setValue.bind(this);
+      const app: IAppOption = getApp();
+      app.globalData.photoCreationTimestamp.subscribers.push(this.setValue);
+    },
+
     attached() {
       this.setDateinitialSelections();
       this.setPickerInitialValue();

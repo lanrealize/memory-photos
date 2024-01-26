@@ -14,7 +14,10 @@ App<IAppOption>({
       value: undefined,
       subscribers: []
     },
-    photoCreationTimestamp: undefined
+    photoCreationTimestamp: {
+      value: undefined,
+      subscribers: []
+    }
   },
 
   onLaunch() {
@@ -35,6 +38,11 @@ App<IAppOption>({
   setPhotoCreationPath(data: string) {
     this.globalData.photoCreationPath.value = data;
     this.globalData.photoCreationPath.subscribers.forEach((callback: (data: string) => void) => callback(data));
+  },
+
+  setPhotoCreationTimestamp(value: number[]) {
+    this.globalData.photoCreationTimestamp.value = value;
+    this.globalData.photoCreationTimestamp.subscribers.forEach((callback: (value: number[]) => void) => callback(value));
   }
 
 })

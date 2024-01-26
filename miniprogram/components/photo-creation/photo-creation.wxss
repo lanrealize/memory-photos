@@ -18,18 +18,17 @@
   background-color: #000000;
   border-radius: 3px;
   color: white;
-  margin-right: auto;
-  margin-left: 5vw;
+  margin-right: 0;
+  margin-left: auto;
 }
 
 .photo-creation-cancel {
   border-radius: 3px;
-  /* border: solid 1px black; */
 }
 
 .photo-creation-actions {
   padding-left: 8vw;
-  padding-right: 8vw;
+  padding-right: 7vw;
   display: flex;
   flex-direction: row;
   margin-top: 2vh;

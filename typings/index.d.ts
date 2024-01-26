@@ -14,5 +14,7 @@ interface IAppOption {
 
   setPhotoCreationShown?: any,
 
-  setPhotoCreationPath?: any
+  setPhotoCreationPath?: any,
+
+  setPhotoCreationTimestamp?: any
 }
