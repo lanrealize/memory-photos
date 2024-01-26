@@ -26,7 +26,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    setDateSelectionInitialValues() {
+    setDateinitialSelections() {
       const dateSelections = getDateSelections();
       this.setData({
         'years': dateSelections.years,
@@ -61,14 +61,27 @@ Component({
       })
     },
 
-    bindChange() {
+    getDateFromIndices(indices: number[]) {
+      return {
+        year: this.data.years[indices[0]],
+        month: this.data.months[indices[1]],
+        day: this.data.days[indices[2]],
+        hour: this.data.hours[indices[3]],
+        minute: this.data.minutes[indices[4]]
+      }
+    },
 
+    bindChange(event: any) {
+      const indices = event.detail.value;
+      this.setData({
+        value: indices
+      });
     }
   },
 
   lifetimes: {
     attached() {
-      this.setDateSelectionInitialValues();
+      this.setDateinitialSelections();
       this.setPickerInitialValue();
     }
   }

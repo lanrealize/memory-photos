@@ -5,7 +5,8 @@ interface IAppOption {
     userInfo?: WechatMiniprogram.UserInfo,
     navigationInfo?: any,
     photoCreationShown?: any,
-    photoCreationPath?: any
+    photoCreationPath?: any,
+    photoCreationTimestamp?: any
   }
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback,
 

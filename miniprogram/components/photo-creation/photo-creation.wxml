@@ -3,9 +3,9 @@
   <view class="photo-creation-title" style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px;">
     <view>取消</view>
 
-    <view class="photo-creation-submit" style="line-height: {{menuHeight}}px; display: flex;">
+    <!-- <view class="photo-creation-submit" style="line-height: {{menuHeight}}px; display: flex;">
       <view style="margin: auto;">添加</view>
-    </view>
+    </view> -->
   </view>
   <view class="photo-creation-description">最近认识了很多人，但我知道他们都不是你。...</view>
   <view class="photo-creation-description-action">
@@ -27,6 +27,7 @@
         </span></p>
     </view>
   </view> -->
-
-
+  <view class="photo-creation-bottom-submit">
+    <p style="color: white; margin: auto;">添加</p>
+  </view>
 </view>

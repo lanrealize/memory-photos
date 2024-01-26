@@ -13,7 +13,8 @@ App<IAppOption>({
     photoCreationPath: {
       value: undefined,
       subscribers: []
-    }
+    },
+    photoCreationTimestamp: undefined
   },
 
   onLaunch() {

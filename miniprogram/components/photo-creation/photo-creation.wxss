@@ -80,3 +80,17 @@
   padding-top: 10vh;
   font-size: 22rpx;
 }
+
+.photo-creation-bottom-submit {
+  margin-left: 8vw;
+  margin-right: 47vw;
+  width: 45vw;
+  height: 5vh;
+  background-color: black;
+  border-radius: 5px;
+
+  position: relative;
+  top: 7vh;
+
+  display: flex;
+}
