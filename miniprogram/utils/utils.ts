@@ -92,15 +92,11 @@ export const addSubstriber = (func: any, property: string) => {
   }
 }
 
-export const postPhoto = async (location: string) => {
+export const postPhoto = async (location: string, type: string) => {
   try {
-    let storageAlbumID = wx.getStorageSync('albumID');
-    console.log(`storageAlbumID: ${storageAlbumID}`)
-    if (storageAlbumID) {
-      console.log('with album')
+    if (type === 'details') {
       await postPhotos();
-    } else {
-      console.log('without album')
+    } else if (type === 'albums') {
       const albumID = await postAlbums();
       wx.setStorageSync('albumID', albumID);
       await postPhotos();

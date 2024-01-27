@@ -43,7 +43,7 @@ Component({
     },
 
     async onPublishClick() {
-      await postPhoto('广东');
+      await postPhoto('广东', this.properties.page);
       const app: IAppOption = getApp();
       app.setPhotoCreationShown(false);
       const currentPage = getCurrentPages().pop()?.route;

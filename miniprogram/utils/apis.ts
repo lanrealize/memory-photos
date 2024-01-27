@@ -79,7 +79,8 @@ export const postPhotos = async () => {
           type: 'createdAlbums'
         },
         success: (res: any) => {
-          resolve(res.data.id)
+          app.updateAlbumPhotosTriggerEmit();
+          resolve(res.data.id);
         },
         fail: (e) => {
           reject(e);

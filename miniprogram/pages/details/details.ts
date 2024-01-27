@@ -1,5 +1,6 @@
 // pages/details/details.ts
 import {getAlbumPhotos} from '../../utils/apis'
+import {addSubstriber} from '../../utils/utils'
 
 
 Page({
@@ -17,12 +18,13 @@ Page({
    */
   async onLoad() {
     this.setPhotoCreationDisplay = this.setPhotoCreationDisplay.bind(this);
+    this.updatePhotos = this.updatePhotos.bind(this);
 
     const app: IAppOption = getApp();
     app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
+    addSubstriber(this.updatePhotos, 'updateAlbumPhotosTrigger');
 
-    const photoList = await getAlbumPhotos();
-    this.setAlbumPhotos(photoList);
+    await this.updatePhotos();
   },
 
   /**
@@ -84,5 +86,10 @@ Page({
     this.setData({
       top: shown ? "0" : "100"
     })
+  },
+
+  async updatePhotos() {
+    const photoList = await getAlbumPhotos();
+    this.setAlbumPhotos(photoList);
   }
 })

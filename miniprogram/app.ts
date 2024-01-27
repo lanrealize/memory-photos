@@ -21,6 +21,9 @@ App<IAppOption>({
     photoCreationDescription: {
       value: undefined,
       subscribers: []
+    },
+    updateAlbumPhotosTrigger: {
+      subscribers: []
     }
   },
 
@@ -52,6 +55,10 @@ App<IAppOption>({
   setPhotoCreationDescription(description: string) {
     this.globalData.photoCreationDescription.value = description;
     this.globalData.photoCreationDescription.subscribers.forEach((callback: (value: string) => void) => callback(description));
+  },
+
+  updateAlbumPhotosTriggerEmit() {
+    this.globalData.updateAlbumPhotosTrigger.subscribers.forEach((callback: () => void) => callback());
   }
 
 })
