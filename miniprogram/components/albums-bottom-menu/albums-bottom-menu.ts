@@ -22,7 +22,11 @@ Component({
    */
   methods: {
     async onCreateClick() {
-      await addImage();
+      try {
+        await addImage();
+      } catch (e) {
+        console.log(e);
+      }
     }
   }
 })

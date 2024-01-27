@@ -8,7 +8,8 @@ interface IAppOption {
     photoCreationPath?: any,
     photoCreationTimestamp?: any,
     photoCreationDescription?: any,
-    updateAlbumPhotosTrigger?: any
+    updateAlbumPhotosTrigger?: any,
+    updateAlbumsTrigger?: any
   }
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback,
 
@@ -22,5 +23,7 @@ interface IAppOption {
 
   setPhotoCreationDescription?: any,
 
-  updateAlbumPhotosTriggerEmit?: any
+  updateAlbumPhotosTriggerEmit?: any,
+  
+  updateAlbumsTriggerEmit?: any
 }

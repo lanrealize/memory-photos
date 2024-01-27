@@ -24,6 +24,9 @@ App<IAppOption>({
     },
     updateAlbumPhotosTrigger: {
       subscribers: []
+    },
+    updateAlbumsTrigger: {
+      subscribers: []
     }
   },
 
@@ -59,6 +62,10 @@ App<IAppOption>({
 
   updateAlbumPhotosTriggerEmit() {
     this.globalData.updateAlbumPhotosTrigger.subscribers.forEach((callback: () => void) => callback());
+  },
+
+  updateAlbumsTriggerEmit() {
+    this.globalData.updateAlbumsTrigger.subscribers.forEach((callback: () => void) => callback());
   }
 
 })
