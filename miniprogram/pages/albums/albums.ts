@@ -1,21 +1,26 @@
 // pages/albums/albums.ts
+import { getAlbums } from '../../utils/apis';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    top: "100"
+    top: "100",
+    albums: [] as object[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
+  async onLoad() {
     this.setPhotoCreationDisplay = this.setPhotoCreationDisplay.bind(this);
 
     const app: IAppOption = getApp();
     app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
+
+    await this.updateAlubms();
   },
 
   /**
@@ -43,7 +48,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    
   },
 
   /**
@@ -71,5 +76,16 @@ Page({
     this.setData({
       top: shown ? "0" : "100"
     })
+  },
+
+  setAlbums(albums: any): void {
+    this.setData({
+      'albums': albums
+    });
+  },
+
+  async updateAlubms() {
+    const albumList = await getAlbums();
+    this.setAlbums(albumList);
   }
 })

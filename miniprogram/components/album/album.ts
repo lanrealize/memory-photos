@@ -21,8 +21,28 @@ Component({
       type: String,
       value: undefined
     },
-    subImageUrls: {
-      type: Array,
+    subImageUrl0: {
+      type: String,
+      value: undefined
+    },
+    subImageUrl1: {
+      type: String,
+      value: undefined
+    },
+    subImageUrl2: {
+      type: String,
+      value: undefined
+    },
+    subImageUrl3: {
+      type: String,
+      value: undefined
+    },
+    subImageUrl4: {
+      type: String,
+      value: undefined
+    },
+    subImageUrl5: {
+      type: String,
       value: undefined
     }
   },
