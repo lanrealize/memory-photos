@@ -91,7 +91,7 @@ export const postPhotos = async () => {
   })
 }
 
-export const getAlbumPhotos = async () => {
+export const getAlbumPhotos = async (): Promise<object[]> => {
   return new Promise((resolve, reject) => {
     try {
       let openID = wx.getStorageSync('openID');
