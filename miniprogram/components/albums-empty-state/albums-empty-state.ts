@@ -1,4 +1,6 @@
 // components/albums-empty-state/albums-empty-state.ts
+import { addImage } from "../../utils/utils"
+
 Component({
 
   /**
@@ -19,6 +21,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    async onCreateClick() {
+      await addImage();
+    }
   }
 })

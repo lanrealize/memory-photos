@@ -74,3 +74,10 @@ export const getDateSelections = () => {
     minutes: minutes
   }
 }
+
+export const addImage = async () => {
+  const imagePath = await uploadImage();
+  const app: IAppOption = getApp();
+  app.setPhotoCreationPath(imagePath);
+  app.setPhotoCreationShown(true);
+}

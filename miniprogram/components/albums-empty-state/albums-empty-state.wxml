@@ -3,5 +3,5 @@
   <image src="/assets/empty-state.png" mode="aspectFit" class="empty-state-image"></image>
   <view class="empty-state-main-title">无内容</view>
   <view class="empty-state-sub-title">点击下方添加按钮，拍摄或上传一张照片，美好的瞬间是快乐的载体。</view>
-  <view class="empty-state-button">添加</view>
+  <view class="empty-state-button" bindtap="onCreateClick">添加</view>
 </view>

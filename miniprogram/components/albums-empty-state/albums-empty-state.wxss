@@ -9,7 +9,7 @@
 .empty-state-image {
   width: 39.5vh;
   height: 39.5vh;
-  padding-top: 6vh;
+  padding-top: 4vh;
 }
 
 .empty-state-main-title {
@@ -27,7 +27,7 @@
 }
 
 .empty-state-button {
-  width: 45vw;
+  width: 50vw;
   height: 4.5vh;
   border-radius: 2.25vh;
   background-color: black;

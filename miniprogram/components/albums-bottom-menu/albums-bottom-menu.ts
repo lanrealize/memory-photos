@@ -1,5 +1,5 @@
 // components/index-bottom-menu/index-bottom-menu.ts
-import { uploadImage } from "../../utils/utils"
+import { addImage } from "../../utils/utils"
 
 Component({
 
@@ -22,10 +22,7 @@ Component({
    */
   methods: {
     async onCreateClick() {
-      const imagePath = await uploadImage();
-      const app: IAppOption = getApp();
-      app.setPhotoCreationPath(imagePath);
-      app.setPhotoCreationShown(true);
+      await addImage();
     }
   }
 })
