@@ -80,6 +80,7 @@ export const addImage = async () => {
   const imagePath = await uploadImage();
   const app: IAppOption = getApp();
   app.setPhotoCreationPath(imagePath);
+  setPickerInitialValue();
   app.setPhotoCreationShown(true);
 }
 
@@ -101,7 +102,7 @@ export const postPhoto = async (location: string, type: string) => {
       wx.setStorageSync('albumID', albumID);
       await postPhotos();
       const app: IAppOption = getApp();
-      const timestamp = app.globalData.photoCreationTimestamp.value.split('-')
+      const timestamp = app.globalData.photoCreationTimestamp.value.split('/')
       const mainTitle = timestamp[1] + '月'
       const subTitle = timestamp[0] + '·' + location
       await putAlbums(mainTitle, subTitle);
@@ -109,4 +110,20 @@ export const postPhoto = async (location: string, type: string) => {
   } catch (e) {
     console.log(e);
   }
+}
+
+export const setPickerInitialValue = () => {
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear().toString();
+  const currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+  const currentDay = currentDate.getDate().toString().padStart(2, '0');
+  const currentHour = currentDate.getHours().toString().padStart(2, '0');
+  const currentMinute = currentDate.getMinutes().toString().padStart(2, '0');
+
+  const app: IAppOption = getApp();
+  app.setPhotoCreationTimestamp(concateDateStrings(currentYear, currentMonth, currentDay, currentHour, currentMinute));
+}
+
+export const concateDateStrings = (year: string, month: string, day: string, hour: string, minute: string) => {
+  return `${year}/${month}/${day}/${hour}/${minute}`
 }

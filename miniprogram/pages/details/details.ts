@@ -90,6 +90,17 @@ Page({
 
   async updatePhotos() {
     const photoList = await getAlbumPhotos();
+    photoList.sort((a, b) => {
+      const dateA = this.parseDate(a.timestamp);
+      const dateB = this.parseDate(b.timestamp);
+      return dateB.getTime() - dateA.getTime();
+    });
+    console.log(photoList)
     this.setAlbumPhotos(photoList);
+  },
+
+  parseDate(dateString: string) {
+    const [year, month, day, hours, minutes] = dateString.split('/').map(Number);
+    return new Date(year, month - 1, day, hours, minutes);
   }
 })

@@ -1,4 +1,4 @@
-import { urlPrefix, devUrlPrefix } from "../configs/network";
+import { devUrlPrefix } from "../configs/network";
 
 export const postAlbums = async () => {
   return new Promise((resolve, reject) => {
@@ -118,7 +118,7 @@ export const postPhotos = async () => {
   })
 }
 
-export const getAlbumPhotos = async (): Promise<object[]> => {
+export const getAlbumPhotos = async (): Promise<{timestamp: string}[]> => {
   return new Promise((resolve, reject) => {
     try {
       let openID = wx.getStorageSync('openID');

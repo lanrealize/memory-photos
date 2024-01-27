@@ -1,5 +1,5 @@
 // components/time-picker/time-picker.ts
-import { getDateSelections } from "../../utils/utils"
+import { getDateSelections, setPickerInitialValue, concateDateStrings } from "../../utils/utils"
 
 Component({
 
@@ -37,18 +37,6 @@ Component({
       })
     },
 
-    setPickerInitialValue() {
-      const currentDate = new Date();
-      const currentYear = currentDate.getFullYear().toString();
-      const currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-      const currentDay = currentDate.getDate().toString().padStart(2, '0');
-      const currentHour = currentDate.getHours().toString().padStart(2, '0');
-      const currentMinute = currentDate.getMinutes().toString().padStart(2, '0');
-
-      const app: IAppOption = getApp();
-      app.setPhotoCreationTimestamp(this.concateDateStrings(currentYear, currentMonth, currentDay, currentHour, currentMinute));
-    },
-
     setValue(date: string) {
       const indices = this.getIndicesFromDate(date);
       if (JSON.stringify(indices) === JSON.stringify(this.data.value)) {
@@ -61,16 +49,8 @@ Component({
       }
     },
 
-    getDateFromIndices(indices: number[]) {
-      return this.concateDateStrings(this.data.years[indices[0]], this.data.months[indices[1]], this.data.days[indices[2]], this.data.hours[indices[3]], this.data.minutes[indices[4]])
-    },
-
-    concateDateStrings(year: string, month: string, day: string, hour: string, minute: string) {
-      return `${year}-${month}-${day}-${hour}-${minute}`
-    },
-
     getIndicesFromDate(date: string) {
-      const dateArray = date.split('-');
+      const dateArray = date.split('/');
       return [
         this.data.years.indexOf(dateArray[0]),
         this.data.months.indexOf(dateArray[1]),
@@ -83,7 +63,7 @@ Component({
     bindChange(event: any) {
       const indices = event.detail.value;
       const app: IAppOption = getApp();
-      app.setPhotoCreationTimestamp(this.getDateFromIndices(indices));
+      app.setPhotoCreationTimestamp(concateDateStrings(this.data.years[indices[0]], this.data.months[indices[1]], this.data.days[indices[2]], this.data.hours[indices[3]], this.data.minutes[indices[4]]));
     }
   },
 
@@ -96,7 +76,7 @@ Component({
 
     attached() {
       this.setDateinitialSelections();
-      this.setPickerInitialValue();
+      setPickerInitialValue();
     }
   }
 })
