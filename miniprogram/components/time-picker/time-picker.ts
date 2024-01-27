@@ -1,5 +1,5 @@
 // components/time-picker/time-picker.ts
-import { getDateSelections } from "../../utils/utils"
+import { getDateSelections, addSubstriber } from "../../utils/utils"
 
 Component({
 
@@ -90,8 +90,7 @@ Component({
   lifetimes: {
     created() {
       this.setValue = this.setValue.bind(this);
-      const app: IAppOption = getApp();
-      app.globalData.photoCreationTimestamp.subscribers.push(this.setValue);
+      addSubstriber(this.setValue, 'photoCreationTimestamp');
     },
 
     attached() {

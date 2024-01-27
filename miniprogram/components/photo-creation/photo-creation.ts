@@ -44,7 +44,8 @@ Component({
       const app: IAppOption = getApp();
       app.setPhotoCreationShown(false);
       const currentPage = getCurrentPages().pop()?.route;
-      if (currentPage === '/pages/details/details') {
+      console.log(app.globalData.photoCreationTimestamp.subscribers)
+      if (currentPage === 'pages/details/details') {
         return;
       } else {
         wx.navigateTo({
