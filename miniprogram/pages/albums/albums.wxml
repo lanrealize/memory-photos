@@ -11,4 +11,4 @@
 <!-- <view style="position: fixed; bottom: 0;">
   <albums-bottom-menu></albums-bottom-menu>
 </view> -->
-<photo-creation class="albums-photo-creation" style="top: {{top}}vh;"></photo-creation>
+<photo-creation page="albums" class="albums-photo-creation" style="top: {{top}}vh;"></photo-creation>

@@ -16,4 +16,4 @@
   </view>
 </view>
 <top-menu></top-menu>
-<photo-creation class="albums-photo-creation" style="top: {{top}}vh;"></photo-creation>
+<photo-creation page="details" class="albums-photo-creation" style="top: {{top}}vh;"></photo-creation>
