@@ -14,7 +14,6 @@ export const postAlbums = async () => {
         method: 'POST',
         data: { type: 'createdAlbums' },
         success: (res: any) => {
-          console.log(res.data.id)
           resolve(res.data.id)
         },
         fail: (e) => {

@@ -1,4 +1,6 @@
 // components/details-bottom-menu/details-bottom-menu.ts
+import { addImage } from "../../utils/utils"
+
 Component({
 
   /**
@@ -19,6 +21,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    async onAddClick() {
+      try {
+        await addImage();
+      } catch (e) {
+        console.log(e);
+      }
+    }
   }
 })

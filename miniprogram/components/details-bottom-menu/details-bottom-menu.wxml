@@ -16,7 +16,7 @@
       <image src="/assets/icons/share.svg" class="details-bottom-menu-icon"></image>
       <view class="details-bottom-menu-icon-text">分享</view>
     </view>
-    <view class="details-bottom-menu-add details-bottom-menu-icon-container">
+    <view class="details-bottom-menu-add details-bottom-menu-icon-container" bindtap="onAddClick">
       添加
     </view>
   </view>

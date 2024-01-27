@@ -3,6 +3,7 @@
     "navigation": "/components/navigation/navigation",
     "photo": "/components/photo/photo",
     "top-menu": "/components/details-top-menu/details-top-menu",
+    "photo-creation": "/components/photo-creation/photo-creation",
     "bottom-menu": "/components/details-bottom-menu/details-bottom-menu"
   },
   "disableScroll": true

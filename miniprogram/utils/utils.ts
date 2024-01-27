@@ -83,16 +83,33 @@ export const addImage = async () => {
   app.setPhotoCreationShown(true);
 }
 
-export const createAlbum = async (location: string) => {
+export const addSubstriber = (func: any, property: string) => {
+  const app = getApp();
+  const functionString = func.toString();
+  const isAlreadySubscribed = app.globalData[property].subscribers.some((subscriber: any) => subscriber.toString() === functionString);
+  if (!isAlreadySubscribed) {
+    app.globalData[property].subscribers.push(func);
+  }
+}
+
+export const postPhoto = async (location: string) => {
   try {
-    const albumID = await postAlbums();
-    wx.setStorageSync('albumID', albumID);
-    await postPhotos();
-    const app: IAppOption = getApp();
-    const timestamp = app.globalData.photoCreationTimestamp.value.split('-')
-    const mainTitle = timestamp[1] + '月'
-    const subTitle = timestamp[0] + '·' + location
-    await putAlbums(mainTitle, subTitle);
+    let storageAlbumID = wx.getStorageSync('albumID');
+    console.log(`storageAlbumID: ${storageAlbumID}`)
+    if (storageAlbumID) {
+      console.log('with album')
+      await postPhotos();
+    } else {
+      console.log('without album')
+      const albumID = await postAlbums();
+      wx.setStorageSync('albumID', albumID);
+      await postPhotos();
+      const app: IAppOption = getApp();
+      const timestamp = app.globalData.photoCreationTimestamp.value.split('-')
+      const mainTitle = timestamp[1] + '月'
+      const subTitle = timestamp[0] + '·' + location
+      await putAlbums(mainTitle, subTitle);
+    }
   } catch (e) {
     console.log(e);
   }

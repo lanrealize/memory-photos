@@ -62,6 +62,7 @@ App<IAppOption>({
 
   async updateAlbumPhotoList() {
     const albumPhotos = await getAlbumPhotos();
+    this.globalData.albumPhotoList.value = albumPhotos;
     this.globalData.albumPhotoList.subscribers.forEach((callback: (value: any) => void) => callback(albumPhotos));
   }
 

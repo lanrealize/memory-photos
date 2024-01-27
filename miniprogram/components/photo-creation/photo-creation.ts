@@ -1,5 +1,5 @@
 // components/photo-creation/photo-creation.ts
-import { createAlbum } from '../../utils/utils'
+import { postPhoto } from '../../utils/utils'
 
 Component({
 
@@ -40,12 +40,17 @@ Component({
     },
 
     async onPublishClick() {
-      await createAlbum('广东');
+      await postPhoto('广东');
       const app: IAppOption = getApp();
       app.setPhotoCreationShown(false);
-      wx.navigateTo({
-        url: '/pages/details/details'
-      });
+      const currentPage = getCurrentPages().pop()?.route;
+      if (currentPage === '/pages/details/details') {
+        return;
+      } else {
+        wx.navigateTo({
+          url: '/pages/details/details'
+        });
+      }
     }
   },
 

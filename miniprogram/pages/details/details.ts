@@ -1,11 +1,15 @@
 // pages/details/details.ts
+import { addSubstriber } from '../../utils/utils';
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    albumPhotos: []
+    albumPhotos: [],
+    top: "100"
   },
 
   /**
@@ -13,9 +17,12 @@ Page({
    */
   async onLoad() {
     this.setAlbumPhotos = this.setAlbumPhotos.bind(this);
+    this.setPhotoCreationDisplay = this.setPhotoCreationDisplay.bind(this);
 
     const app: IAppOption = getApp();
-    app.globalData.albumPhotoList.subscribers.push(this.setAlbumPhotos);
+    addSubstriber(this.setAlbumPhotos, 'albumPhotoList');
+    addSubstriber(this.setPhotoCreationDisplay, 'photoCreationShown');
+
     await app.updateAlbumPhotoList();
   },
 
@@ -29,8 +36,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {
-
+  async onShow() {
   },
 
   /**
@@ -71,6 +77,12 @@ Page({
   setAlbumPhotos(albumPhotos: any): void {
     this.setData({
       albumPhotos: albumPhotos
+    })
+  },
+
+  setPhotoCreationDisplay(shown: boolean): void {
+    this.setData({
+      top: shown ? "0" : "100"
     })
   }
 })

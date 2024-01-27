@@ -3,8 +3,11 @@
   <navigation page="details"></navigation>
   <scroll-view class="scrollarea" scroll-y type="list" style="flex: 1; height: 0;">
     <view style="height: {{6 + 1.5}}vh; width: 100vw;"></view>
-    <view class="general-container" wx:for="{{albumPhotos}}" wx:for-item="photo" wx:key="key" wx:for-index="index">
-      <photo title="{{photo.title}}" subTitle="{{photo.subTitle}}" imageUrl="{{photo.imageUrl}}" description="{{photo.description}}"></photo>
+    <view class="general-container">
+      <view wx:for="{{albumPhotos}}" wx:for-item="photo" wx:key="key" wx:for-index="index">
+        <photo title="{{photo.title}}" subTitle="{{photo.subTitle}}" imageUrl="{{photo.imageUrl}}" description="{{photo.description}}">
+        </photo>
+      </view>
       <photo type="end" title="旅行的起点"></photo>
     </view>
   </scroll-view>
@@ -13,3 +16,4 @@
   </view>
 </view>
 <top-menu></top-menu>
+<photo-creation class="albums-photo-creation" style="top: {{top}}vh;"></photo-creation>
