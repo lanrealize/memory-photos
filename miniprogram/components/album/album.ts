@@ -5,6 +5,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    albumId: {
+      type: String,
+      value: undefined
+    },
     title: {
       type: String,
       value: undefined
@@ -59,6 +63,7 @@ Component({
    */
   methods: {
     onViewClick() {
+      wx.setStorageSync('albumID', this.properties.albumId);
       wx.navigateTo({
         url: '/pages/details/details'
       });

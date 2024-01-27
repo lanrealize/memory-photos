@@ -5,6 +5,7 @@
     <view class="general-container">
       <view wx:for="{{albums}}" wx:for-item="album" wx:key="id" wx:for-index="index">
         <album 
+          albumId="{{album.id}}"
           title="{{album.title}}" 
           subTitle="{{album.subTitle}}" 
           description="{{album.description}}" 
