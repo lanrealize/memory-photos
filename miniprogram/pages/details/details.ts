@@ -21,7 +21,7 @@ Page({
 
     const app: IAppOption = getApp();
     addSubstriber(this.setAlbumPhotos, 'albumPhotoList');
-    addSubstriber(this.setPhotoCreationDisplay, 'photoCreationShown');
+    app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
 
     await app.updateAlbumPhotoList();
   },
@@ -36,7 +36,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  async onShow() {
+  onShow() {
   },
 
   /**
