@@ -1,4 +1,6 @@
 // app.ts
+import { getAlbumPhotos } from './utils/apis';
+
 App<IAppOption>({
 
   globalData: {
@@ -19,6 +21,10 @@ App<IAppOption>({
       subscribers: []
     },
     photoCreationDescription: {
+      value: undefined,
+      subscribers: []
+    },
+    albumPhotoList: {
       value: undefined,
       subscribers: []
     }
@@ -52,6 +58,11 @@ App<IAppOption>({
   setPhotoCreationDescription(description: string) {
     this.globalData.photoCreationDescription.value = description;
     this.globalData.photoCreationDescription.subscribers.forEach((callback: (value: string) => void) => callback(description));
+  },
+
+  async updateAlbumPhotoList() {
+    const albumPhotos = await getAlbumPhotos();
+    this.globalData.albumPhotoList.subscribers.forEach((callback: (value: any) => void) => callback(albumPhotos));
   }
 
 })

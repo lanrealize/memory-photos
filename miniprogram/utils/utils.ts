@@ -1,9 +1,10 @@
 import { urlPrefix, devUrlPrefix } from "../configs/network";
+import { postAlbums, putAlbums, postPhotos } from './apis'
 
 export const wxLogin = () => {
   return new Promise((resolve, reject) => {
     try {
-      let openID = wx.getStorageSync('openID')
+      let openID = wx.getStorageSync('openID');
       if (openID) {
         console.log('has openID')
         resolve(openID)
@@ -18,8 +19,8 @@ export const wxLogin = () => {
               data: { code: res.code },
               success: (res: any) => {
                 console.log('get openID')
-                wx.setStorageSync('openID', res.data.openID)
-                resolve(res.data.openID)
+                wx.setStorageSync('openID', res.data.openID);
+                resolve(res.data.openID);
               },
               fail: (e) => {
                 reject(e)
@@ -80,4 +81,19 @@ export const addImage = async () => {
   const app: IAppOption = getApp();
   app.setPhotoCreationPath(imagePath);
   app.setPhotoCreationShown(true);
+}
+
+export const createAlbum = async (location: string) => {
+  try {
+    const albumID = await postAlbums();
+    wx.setStorageSync('albumID', albumID);
+    await postPhotos();
+    const app: IAppOption = getApp();
+    const timestamp = app.globalData.photoCreationTimestamp.value.split('-')
+    const mainTitle = timestamp[1] + '月'
+    const subTitle = timestamp[0] + '·' + location
+    await putAlbums(mainTitle, subTitle);
+  } catch (e) {
+    console.log(e);
+  }
 }

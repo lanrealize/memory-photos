@@ -16,7 +16,6 @@ Page({
 
     const app: IAppOption = getApp();
     app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
-    console.log("add subscriber")
   },
 
   /**

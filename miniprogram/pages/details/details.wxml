@@ -4,11 +4,11 @@
   <scroll-view class="scrollarea" scroll-y type="list" style="flex: 1; height: 0;">
     <view style="height: {{6 + 1.5}}vh; width: 100vw;"></view>
     <view class="general-container">
-      <photo title="16:28" subTitle="11月23日" imageUrl="/assets/trip.jpg" description="这是该照片的描述，这段描述有可能会很长占两行，也有可能只占一行。"></photo>
+      <!-- <photo title="16:28" subTitle="11月23日" imageUrl="/assets/trip.jpg" description="这是该照片的描述，这段描述有可能会很长占两行，也有可能只占一行。"></photo>
       <photo title="16:28" subTitle="11月23日" imageUrl="/assets/trip3.jpg" description="这是该照片的描述，这段描述有可能会很长占两行，也有可能只占一行。"></photo>
       <photo title="16:28" subTitle="11月23日" imageUrl="/assets/trip2.jpg" description="这是该照片的描述，这段描述有可能会很长占两行，也有可能只占一行。"></photo>
       <photo title="16:28" subTitle="11月23日" imageUrl="/assets/trip3.jpg" description="这是该照片的描述，这段描述有可能会很长占两行，也有可能只占一行。"></photo>
-      <photo title="16:28" subTitle="11月23日" imageUrl="/assets/trip.jpg" description="这是该照片的描述，这段描述有可能会很长占两行，也有可能只占一行。"></photo>
+      <photo title="16:28" subTitle="11月23日" imageUrl="/assets/trip.jpg" description="这是该照片的描述，这段描述有可能会很长占两行，也有可能只占一行。"></photo> -->
       <photo type="end" title="旅行的起点"></photo>
     </view>
   </scroll-view>

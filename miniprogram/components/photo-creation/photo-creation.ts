@@ -1,4 +1,6 @@
 // components/photo-creation/photo-creation.ts
+import { createAlbum } from '../../utils/utils'
+
 Component({
 
   /**
@@ -35,6 +37,15 @@ Component({
     onCancelClick() {
       const app: IAppOption = getApp();
       app.setPhotoCreationShown(false);
+    },
+
+    async onPublishClick() {
+      await createAlbum('广东');
+      const app: IAppOption = getApp();
+      app.setPhotoCreationShown(false);
+      wx.navigateTo({
+        url: '/pages/details/details'
+      });
     }
   },
 

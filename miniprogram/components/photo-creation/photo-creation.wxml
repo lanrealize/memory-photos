@@ -11,7 +11,7 @@
       <view style="margin: auto;" bindtap="onCancelClick">取消</view>
     </view>
     <view class="photo-creation-submit" style="line-height: {{menuHeight}}px; display: flex;">
-      <view style="margin: auto;">添加</view>
+      <view style="margin: auto;" bindtap="onPublishClick">添加</view>
     </view>
   </view>
   <view class="photo-creation-description">{{photoDescription}}...</view>

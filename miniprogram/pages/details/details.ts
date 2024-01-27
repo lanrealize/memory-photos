@@ -5,14 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    albumPhotos: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
+  async onLoad() {
+    this.setAlbumPhotos = this.setAlbumPhotos.bind(this);
 
+    const app: IAppOption = getApp();
+    app.globalData.albumPhotoList.subscribers.push(this.setAlbumPhotos);
+    await app.updateAlbumPhotoList();
   },
 
   /**
@@ -62,5 +66,11 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  setAlbumPhotos(albumPhotos: any): void {
+    this.setData({
+      albumPhotos: albumPhotos
+    })
   }
 })
