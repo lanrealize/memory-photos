@@ -64,6 +64,7 @@
 
 .details-top-menu-item-text {
   transition: color 0.3s ease-in-out;
+  margin-top: 0.7vh;
 }
 
 .details-top-menu-icon {
