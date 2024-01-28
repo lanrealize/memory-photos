@@ -95,7 +95,6 @@ Page({
       const dateB = this.parseDate(b.timestamp);
       return dateB.getTime() - dateA.getTime();
     });
-    console.log(photoList)
     this.setAlbumPhotos(photoList);
   },
 

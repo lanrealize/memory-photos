@@ -1,11 +1,14 @@
 <!--components/details-top-menu/details-top-menu.wxml-->
 <view class="details-top-menu-root" style="top: {{top}}px">
   <view class="details-top-menu-main">
-    <view class="details-top-menu-item-container details-top-menu-item0">
-      <view style="margin-top: 0.7vh;">顺序浏览</view>
-      <view class="details-top-menu-item-selected"></view>
+    <view class="details-top-menu-item-container details-top-menu-item0" bindtap="adjustWidths" data-item="normal">
+      <view style="margin-top: 0.7vh;" style="color: {{colorNormal}};">顺序浏览</view>
+      <view style="width: {{widthNormal}}vh;" class="details-top-menu-item-selected"></view>
     </view>
-    <view class="details-top-menu-item-container details-top-menu-item1">倒序浏览</view>
+    <view class="details-top-menu-item-container details-top-menu-item1"  bindtap="adjustWidths" data-item="reverse">
+      <view style="margin-top: 0.7vh;" style="color: {{colorReverse}};">顺序浏览</view>
+      <view style="width: {{widthReverse}}vh;" class="details-top-menu-item-selected"></view>
+    </view>
     <view class="details-top-menu-item-container details-top-menu-item2">随机浏览</view>
     <view class="details-top-menu-item-container details-top-menu-item3">回忆模式</view>
     <view class="details-top-menu-item4">

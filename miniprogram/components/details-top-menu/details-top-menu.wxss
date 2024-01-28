@@ -26,21 +26,19 @@
 }
 
 .details-top-menu-item-selected {
-  width: 2vh;
   height: 0.2vh;
   background-color: black;
   margin: auto;
   margin-top: 0.5vh;
+  transition: width 0.3s ease-in-out;
 }
 
 .details-top-menu-item0 {
   grid-area: part0;
-  color: #000000;
 }
 
 .details-top-menu-item1 {
   grid-area: part1;
-  color: #808080;
 }
 
 .details-top-menu-item2 {
