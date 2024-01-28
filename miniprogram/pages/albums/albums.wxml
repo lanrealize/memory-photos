@@ -18,6 +18,7 @@
           mainImageUrl="{{album.images[0].imageUrl}}"></album>
       </view>
     </view>
+    <view style="height: 9.5vh;"></view>
   </scroll-view>
   <empty-state wx:if="{{albums.length === 0}}"></empty-state>
 </view>
