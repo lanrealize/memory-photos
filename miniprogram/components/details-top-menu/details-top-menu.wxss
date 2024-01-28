@@ -62,6 +62,10 @@
   gap: 1.5vw;
 }
 
+.details-top-menu-item-text {
+  transition: color 0.3s ease-in-out;
+}
+
 .details-top-menu-icon {
   height: 50rpx;
   width: 50rpx;

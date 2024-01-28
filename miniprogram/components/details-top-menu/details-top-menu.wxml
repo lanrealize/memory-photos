@@ -2,11 +2,11 @@
 <view class="details-top-menu-root" style="top: {{top}}px">
   <view class="details-top-menu-main">
     <view class="details-top-menu-item-container details-top-menu-item0" bindtap="adjustWidths" data-item="normal">
-      <view style="margin-top: 0.7vh;" style="color: {{colorNormal}};">顺序浏览</view>
+      <view style="margin-top: 0.7vh;" style="color: {{colorNormal}};" class="details-top-menu-item-text">顺序浏览</view>
       <view style="width: {{widthNormal}}vh;" class="details-top-menu-item-selected"></view>
     </view>
     <view class="details-top-menu-item-container details-top-menu-item1"  bindtap="adjustWidths" data-item="reverse">
-      <view style="margin-top: 0.7vh;" style="color: {{colorReverse}};">顺序浏览</view>
+      <view style="margin-top: 0.7vh;" style="color: {{colorReverse}};" class="details-top-menu-item-text">顺序浏览</view>
       <view style="width: {{widthReverse}}vh;" class="details-top-menu-item-selected"></view>
     </view>
     <view class="details-top-menu-item-container details-top-menu-item2">随机浏览</view>

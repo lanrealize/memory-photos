@@ -24,20 +24,19 @@ Component({
   methods: {
     adjustWidths(event: any) {
       if ('normal'=== event.currentTarget.dataset.item) {
-        this.setData({
-          widthNormal: 2,
-          widthReverse: 0,
-          colorNormal: '#000000',
-          colorReverse: '#808080'
-        })
+        this.setSelection(2, 0, '#000000', '#808080');
       } else {
-        this.setData({
-          widthNormal: 0,
-          widthReverse: 2,
-          colorNormal: '808080',
-          colorReverse: '#000000'
-        }) 
+        this.setSelection(0, 2, '#808080', '#000000');
       }
+    },
+
+    setSelection(widthNormal: any, widthReverse: any, colorNormal: any, colorReverse: any) {
+      this.setData({
+        widthNormal: widthNormal,
+        widthReverse: widthReverse,
+        colorNormal: colorNormal,
+        colorReverse: colorReverse
+      }) 
     }
   },
 
