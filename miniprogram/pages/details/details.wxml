@@ -3,7 +3,7 @@
   <navigation page="details"></navigation>
   <scroll-view class="scrollarea" scroll-y type="list" style="flex: 1; height: 0;">
     <view style="height: {{6 + 1.5}}vh; width: 100vw;"></view>
-    <view class="general-container">
+    <view class="general-container" style="{{style}}">
       <view wx:for="{{albumPhotos}}" wx:for-item="photo" wx:key="index" wx:for-index="index">
         <photo title="{{photo.title}}" subTitle="{{photo.subTitle}}" imageUrl="{{photo.imageUrl}}" description="{{photo.description}}">
         </photo>

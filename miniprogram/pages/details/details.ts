@@ -10,7 +10,8 @@ Page({
    */
   data: {
     albumPhotos: [] as object[],
-    top: "100"
+    top: "100",
+    style: 'opacity: 1; transition: opacity 0.5s ease-in-out;'
   },
 
   /**
@@ -108,11 +109,21 @@ Page({
         return dateB.getTime() - dateA.getTime();
       }
     });
+    this.setFadeInOut();
     this.setAlbumPhotos(photoList);
   },
 
   parseDate(dateString: string) {
     const [year, month, day, hours, minutes] = dateString.split('/').map(Number);
     return new Date(year, month - 1, day, hours, minutes);
+  },
+
+  setFadeInOut() {
+    this.setData({
+      style: 'opacity: 0;'
+    });
+    this.setData({
+      style: 'opacity: 1; transition: opacity 0.5s ease-in-out;'
+    });
   }
 })
