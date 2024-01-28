@@ -76,7 +76,6 @@ App<IAppOption>({
 
   setDetailsViewMode(mode: string) {
     this.globalData.detailsViewMode.value = mode;
-    console.log(this.globalData.detailsViewMode.subscribers);
     this.globalData.detailsViewMode.subscribers.forEach((callback: (value: string) => void) => callback(mode));
   }
 
