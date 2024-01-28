@@ -51,7 +51,9 @@ Component({
   lifetimes: {
     created: function () {
       this.setViewMode = this.setViewMode.bind(this);
-      addSubstriber(this.setViewMode, 'detailsViewMode');
+
+      const app: IAppOption = getApp();
+      app.globalData.detailsViewMode.subscribers.push(this.setViewMode);
     },
 
     attached: function () {

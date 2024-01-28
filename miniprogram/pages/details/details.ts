@@ -23,7 +23,7 @@ Page({
 
     const app: IAppOption = getApp();
     app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
-    addSubstriber(this.updatePhotos, 'updateAlbumPhotosTrigger');
+    app.globalData.updateAlbumPhotosTrigger.subscribers.push(this.updatePhotos);
     app.globalData.detailsViewMode.subscribers.push(this.updatePhotos);
 
     app.setDetailsViewMode('normal');
