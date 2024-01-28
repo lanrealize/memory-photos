@@ -8,7 +8,7 @@
         <photo title="{{photo.title}}" subTitle="{{photo.subTitle}}" imageUrl="{{photo.imageUrl}}" description="{{photo.description}}">
         </photo>
       </view>
-      <photo type="end" title="旅行的起点"></photo>
+      <photo type="end" title="无更多内容"></photo>
     </view>
   </scroll-view>
   <view style="position: relative; bottom: 0;">
