@@ -1,4 +1,7 @@
 // components/details-top-menu/details-top-menu.ts
+import { getAlbumPhotos } from '../../utils/apis';
+import { addSubstriber } from '../../utils/utils'
+
 Component({
 
   /**
@@ -22,8 +25,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    adjustWidths(event: any) {
-      if ('normal'=== event.currentTarget.dataset.item) {
+    onModeClick(event: any) {
+      const app: IAppOption = getApp();
+      app.setDetailsViewMode(event.currentTarget.dataset.item);
+    },
+
+    setViewMode(mode: string) {
+      if ('normal'=== mode) {
         this.setSelection(2, 0, '#000000', '#808080');
       } else {
         this.setSelection(0, 2, '#808080', '#000000');
@@ -41,6 +49,11 @@ Component({
   },
 
   lifetimes: {
+    created: function () {
+      this.setViewMode = this.setViewMode.bind(this);
+      addSubstriber(this.setViewMode, 'detailsViewMode');
+    },
+
     attached: function () {
       const app: IAppOption = getApp();
       this.setData({

@@ -18,12 +18,14 @@ Page({
    */
   async onLoad() {
     this.setPhotoCreationDisplay = this.setPhotoCreationDisplay.bind(this);
-    this.updatePhotos = this.updatePhotos.bind(this);
+    this.updatePhotosOder = this.updatePhotosOder.bind(this);
 
     const app: IAppOption = getApp();
     app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
     addSubstriber(this.updatePhotos, 'updateAlbumPhotosTrigger');
+    app.globalData.detailsViewMode.subscribers.push(this.updatePhotosOder);
 
+    app.setDetailsViewMode('normal');
     await this.updatePhotos();
   },
 
@@ -90,10 +92,33 @@ Page({
 
   async updatePhotos() {
     const photoList = await getAlbumPhotos();
+    const app: IAppOption = getApp();
+    const mode = app.globalData.detailsViewMode.value;
+    console.log(mode)
+    console.log(photoList)
     photoList.sort((a, b) => {
       const dateA = this.parseDate(a.timestamp);
       const dateB = this.parseDate(b.timestamp);
-      return dateB.getTime() - dateA.getTime();
+      if ('normal' === mode) {
+        return dateA.getTime() - dateB.getTime();
+      } else {
+        return dateB.getTime() - dateA.getTime();
+      }
+    });
+    console.log(photoList);
+    this.setAlbumPhotos(photoList);
+  },
+
+  async updatePhotosOder(mode: string) {
+    const photoList = await getAlbumPhotos();
+    photoList.sort((a, b) => {
+      const dateA = this.parseDate(a.timestamp);
+      const dateB = this.parseDate(b.timestamp);
+      if ('normal' === mode) {
+        return dateA.getTime() - dateB.getTime();
+      } else {
+        return dateB.getTime() - dateA.getTime();
+      }
     });
     this.setAlbumPhotos(photoList);
   },
