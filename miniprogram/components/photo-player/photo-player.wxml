@@ -1,0 +1,20 @@
+<!--components/photo-player/photo-player.wxml-->
+<view class="image-player-content">
+
+    <view 
+        style="animation-duration: {{animationDuration/1000}}s;" 
+        class="image-item {{currentIndex == index ? (canAnimation ? (item.animate + ' current-img') : 'current-img') : ''}}" 
+        wx:for="{{playerList}}" 
+        wx:key="{{index}}">
+      <image class="img" src="{{item.img}}" mode="aspectFit"></image>
+
+      <view 
+        wx:if="{{needBackground}}" 
+        class="back-img-blur"
+        style="opacity: {{backgroundOpacity}};">
+          <image mode="aspectFill" src="{{playerList[currentIndex].img}}"></image>
+      </view>
+      
+    </view>
+
+</view>

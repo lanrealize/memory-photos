@@ -127,3 +127,7 @@ export const setPickerInitialValue = () => {
 export const concateDateStrings = (year: string, month: string, day: string, hour: string, minute: string) => {
   return `${year}/${month}/${day}/${hour}/${minute}`
 }
+
+export const getUrlListFromImageList = (imageList: {imageUrl: string}[]): string[] => {
+  return imageList.map(item => item.imageUrl);
+}
