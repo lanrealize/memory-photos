@@ -1,4 +1,4 @@
-import { urlPrefix, devUrlPrefix } from "../configs/network";
+import { devUrlPrefix } from "../configs/network";
 import { postAlbums, putAlbums, postPhotos } from './apis'
 
 export const wxLogin = () => {

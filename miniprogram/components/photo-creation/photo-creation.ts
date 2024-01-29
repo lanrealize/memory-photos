@@ -45,8 +45,6 @@ Component({
     async onPublishClick() {
       try {
         await postPhoto('广东', this.properties.page);
-        console.log('after post photo');
-        console.log(Date.now());
         const app: IAppOption = getApp();
         app.setPhotoCreationShown(false);
         const currentPage = getCurrentPages().pop()?.route;
