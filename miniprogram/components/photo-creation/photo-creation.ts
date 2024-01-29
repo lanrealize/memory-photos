@@ -43,16 +43,22 @@ Component({
     },
 
     async onPublishClick() {
-      await postPhoto('广东', this.properties.page);
-      const app: IAppOption = getApp();
-      app.setPhotoCreationShown(false);
-      const currentPage = getCurrentPages().pop()?.route;
-      if (currentPage === 'pages/details/details') {
-        return;
-      } else {
-        wx.navigateTo({
-          url: '/pages/details/details'
-        });
+      try {
+        await postPhoto('广东', this.properties.page);
+        console.log('after post photo');
+        console.log(Date.now());
+        const app: IAppOption = getApp();
+        app.setPhotoCreationShown(false);
+        const currentPage = getCurrentPages().pop()?.route;
+        if (currentPage === 'pages/details/details') {
+          return;
+        } else {
+          wx.navigateTo({
+            url: '/pages/details/details'
+          });
+        }
+      } catch (e) {
+        console.log(e);
       }
     }
   },

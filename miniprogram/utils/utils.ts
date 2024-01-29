@@ -108,7 +108,7 @@ export const postPhoto = async (location: string, type: string) => {
       await putAlbums(mainTitle, subTitle);
     }
   } catch (e) {
-    console.log(e);
+    throw(e);
   }
 }
 
