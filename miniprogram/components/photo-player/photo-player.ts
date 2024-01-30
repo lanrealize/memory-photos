@@ -46,8 +46,7 @@ Component({
     currentIndex: 0,
     intervalPlay: 0,
     canAnimation: false,
-    playerList: [] as object[],
-    imageAmount: 0
+    playerList: [] as object[]
   },
 
   methods: {
@@ -81,7 +80,7 @@ Component({
 
   lifetimes: {
     attached() {
-      
+
     }
   }
 })
