@@ -4,6 +4,7 @@
   width: 100%;
   height: 100%;
   bottom: 0;
+  overflow: hidden;
 }
 
 .image-player-content .image-item{
@@ -17,14 +18,14 @@
 
 .image-player-content .image-item.current-img {
   opacity: 1;
-  z-index: 2;
+  z-index: 3;
 }
 
 .image-player-content .image-item .img{
   width: 100%;
   height: 100%;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .image-player-content .back-img-blur{
@@ -35,7 +36,7 @@
   right: -10rpx;
   opacity: 0.5;
   z-index: 1;
-  backdrop-filter: blur(10rpx);
+  filter: blur(10px);
 }
 
 .image-player-content .back-img-blur image{
@@ -63,3 +64,13 @@
       opacity: 0
   }
 }
+
+/* .backdrop-blur-bg {
+  background-color: rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(10px);
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  width: 100%;
+} */

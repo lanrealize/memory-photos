@@ -18,10 +18,11 @@
 
       <!-- <view 
         wx:if="{{needBackground}}" 
-        class="backdrop-blur-bg"
-        style="opacity: {{backgroundOpacity}}; background-color: black; backdrop-filter: blur(5px);">
+        class="backdrop-blur-bg">
       </view> -->
       
     </view>
+
+
 
 </view>
