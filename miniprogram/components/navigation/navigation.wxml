@@ -10,3 +10,6 @@
 <view wx:if="{{page == 'index'}}" class="navigation-root">
   <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx; color: white;"><p>回忆影社</p></view>
 </view>
+<view wx:if="{{page == 'player'}}" class="navigation-root">
+  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx; color: white;"><p>浏览回忆</p></view>
+</view>

@@ -1,0 +1,12 @@
+<!--pages/player/player.wxml-->
+<view style="display: flex; flex-direction: column; height: 100vh;">
+  <navigation page="player"></navigation>
+  <view style="height: 5vh;"></view>
+  <photo-player
+    style="flex: 1;"
+    imageList="{{backImageUrls}}"
+    needBackground="{{true}}"
+    backgroundOpacity="{{0.6}}"
+    animationDuration="{{4000}}"></photo-player>
+    <view style="height: 10vh;"></view>
+</view>

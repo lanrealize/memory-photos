@@ -131,3 +131,8 @@ export const concateDateStrings = (year: string, month: string, day: string, hou
 export const getUrlListFromImageList = (imageList: {imageUrl: string}[]): string[] => {
   return imageList.map(item => item.imageUrl);
 }
+
+export const parseDate = (dateString: string) => {
+  const [year, month, day, hours, minutes] = dateString.split('/').map(Number);
+  return new Date(year, month - 1, day, hours, minutes);
+}

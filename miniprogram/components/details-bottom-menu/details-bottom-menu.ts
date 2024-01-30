@@ -27,6 +27,12 @@ Component({
       } catch (e) {
         console.log(e);
       }
+    },
+
+    onPlayClick() {
+      wx.navigateTo({
+        url: '/pages/player/player'
+      });
     }
   }
 })

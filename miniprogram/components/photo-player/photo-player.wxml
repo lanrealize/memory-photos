@@ -2,10 +2,11 @@
 <view class="image-player-content">
 
     <view 
-        style="animation-duration: {{animationDuration/1000}}s;" 
-        class="image-item {{currentIndex == index ? (canAnimation ? (item.animate + ' current-img') : 'current-img') : ''}}" 
-        wx:for="{{playerList}}" 
-        wx:key="{{index}}">
+      style="animation-duration: {{animationDuration/1000}}s;" 
+      class="image-item {{currentIndex == index ? (canAnimation ? (item.animate + ' current-img') : 'current-img') : ''}}" 
+      wx:for="{{playerList}}"
+      wx:key="index" 
+      wx:for-index="index">
       <image class="img" src="{{item.img}}" mode="aspectFit"></image>
 
       <view 
@@ -14,6 +15,12 @@
         style="opacity: {{backgroundOpacity}};">
           <image mode="aspectFill" src="{{playerList[currentIndex].img}}"></image>
       </view>
+
+      <!-- <view 
+        wx:if="{{needBackground}}" 
+        class="backdrop-blur-bg"
+        style="opacity: {{backgroundOpacity}}; background-color: black; backdrop-filter: blur(5px);">
+      </view> -->
       
     </view>
 

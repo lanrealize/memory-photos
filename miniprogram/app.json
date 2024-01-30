@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/albums/albums",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/player/player"
   ],
   "window": {
     "navigationBarTextStyle": "black",

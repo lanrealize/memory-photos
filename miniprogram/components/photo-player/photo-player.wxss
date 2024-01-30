@@ -3,6 +3,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  bottom: 0;
 }
 
 .image-player-content .image-item{
@@ -34,7 +35,7 @@
   right: -10rpx;
   opacity: 0.5;
   z-index: 1;
-  filter: blur(10rpx);
+  backdrop-filter: blur(10rpx);
 }
 
 .image-player-content .back-img-blur image{
