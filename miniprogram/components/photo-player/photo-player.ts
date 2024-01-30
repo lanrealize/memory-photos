@@ -21,6 +21,11 @@ Component({
       }
     },
 
+    imageAmount: {
+      type: Number,
+      default: 0
+    },
+
     needBackground: {
       type: Boolean,
       default: true
@@ -41,7 +46,8 @@ Component({
     currentIndex: 0,
     intervalPlay: 0,
     canAnimation: false,
-    playerList: [] as object[]
+    playerList: [] as object[],
+    imageAmount: 0
   },
 
   methods: {
@@ -74,6 +80,8 @@ Component({
   },
 
   lifetimes: {
-    
+    attached() {
+      
+    }
   }
 })

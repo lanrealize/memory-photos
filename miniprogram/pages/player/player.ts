@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    backImageUrls: [] as string[]
+    backImageUrls: [] as string[],
+    backImageAmount: 0
   },
 
   /**
@@ -91,11 +92,12 @@ Page({
 
   setBgPhotos(bgUrls: string[]) {
     this.setData({
-      backImageUrls: bgUrls
+      backImageUrls: bgUrls,
+      backImageAmount: bgUrls.length
     })
   },
 
-  getUrlListFromImageList() {
-
-  }
+  onBackClick() {
+    wx.navigateBack();
+  },
 })

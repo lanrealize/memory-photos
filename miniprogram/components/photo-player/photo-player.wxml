@@ -1,5 +1,7 @@
 <!--components/photo-player/photo-player.wxml-->
-<view class="image-player-content">
+<view class="player-root">
+  <view class="player-indexing"><p style="margin: auto;">{{currentIndex + 1}}/{{imageAmount}}</p></view>
+  <view class="image-player-content">
 
     <view 
       style="animation-duration: {{animationDuration/1000}}s;" 
@@ -22,7 +24,6 @@
       </view> -->
       
     </view>
-
-
-
+    
+  </view>
 </view>

@@ -1,12 +1,12 @@
 <!--pages/player/player.wxml-->
 <view style="display: flex; flex-direction: column; height: 100vh;">
   <navigation page="player"></navigation>
-  <view style="height: 5vh;"></view>
   <photo-player
     style="flex: 1;"
     imageList="{{backImageUrls}}"
+    imageAmount="{{backImageAmount}}"
     needBackground="{{true}}"
     backgroundOpacity="{{0.6}}"
     animationDuration="{{4000}}"></photo-player>
-    <view style="height: 10vh;"></view>
+    <view style="height: 10vh; display: flex;" bindtap="onBackClick"><p style="margin: auto; color: white; padding-bottom: 1.5vh;">退出</p></view>
 </view>
