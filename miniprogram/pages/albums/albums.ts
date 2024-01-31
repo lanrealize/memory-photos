@@ -9,7 +9,8 @@ Page({
    */
   data: {
     top: "100",
-    albums: [] as object[]
+    albums: [] as object[],
+    loading: true
   },
 
   /**

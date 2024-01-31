@@ -1,7 +1,8 @@
 <!--pages/albums/albums.wxml-->
 <view style="display: flex; flex-direction: column; height: 100vh;">
   <navigation page="albums"></navigation>
-  <scroll-view class="scrollarea" scroll-y type="list" style="flex: 1; height: 0;" wx:if="{{albums.length !== 0}}">
+
+  <scroll-view class="scrollarea" scroll-y type="list" style="flex: 1; height: 0;" wx:if="{{!loading && albums.length !== 0}}">
     <view class="general-container">
       <view wx:for="{{albums}}" wx:for-item="album" wx:key="id" wx:for-index="index">
         <album 
@@ -20,9 +21,22 @@
     </view>
     <view style="height: 9.5vh;"></view>
   </scroll-view>
-  <empty-state wx:if="{{albums.length === 0}}"></empty-state>
+
+  <view class="albums-loading" wx:if="{{loading}}">
+    <view class="albums-loading-text">加载中</view>
+    <view class="sk-three-bounce">
+      <view style="margin: auto;">
+        <view class="sk-child sk-bounce1"></view>
+        <view class="sk-child sk-bounce2"></view>
+        <view class="sk-child"></view>
+      </view>
+    </view>
+  </view>
+
+
+  <empty-state wx:if="{{!loading && albums.length === 0}}"></empty-state>
 </view>
-<view style="position: fixed; bottom: 0;" wx:if="{{albums.length !== 0}}">
+<view style="position: fixed; bottom: 0;" wx:if="{{!loading && albums.length !== 0}}">
   <albums-bottom-menu></albums-bottom-menu>
 </view>
 <photo-creation page="albums" class="albums-photo-creation" style="top: {{top}}vh;"></photo-creation>
