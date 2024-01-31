@@ -18,7 +18,8 @@ Component({
    */
   data: {
     photoPath: '',
-    photoDescription: ''
+    photoDescription: '',
+    isCreating: false
   },
 
   /**
@@ -43,6 +44,7 @@ Component({
     },
 
     async onPublishClick() {
+      this.setIsCreating(true);
       try {
         await postPhoto('广东', this.properties.page);
         const app: IAppOption = getApp();
@@ -57,7 +59,15 @@ Component({
         }
       } catch (e) {
         console.log(e);
+      } finally {
+        this.setIsCreating(false);
       }
+    },
+
+    setIsCreating(isCreating: boolean) {
+      this.setData({
+        isCreating: isCreating
+      })
     }
   },
 
