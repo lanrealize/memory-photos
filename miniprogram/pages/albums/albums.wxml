@@ -2,7 +2,12 @@
 <view style="display: flex; flex-direction: column; height: 100vh;">
   <navigation page="albums"></navigation>
 
-  <scroll-view class="scrollarea" scroll-y type="list" style="flex: 1; height: 0;" wx:if="{{!loading && albums.length !== 0}}">
+  <view class="image-container">
+    <view class="placeholder"></view>
+    <view class="loading-line"></view>
+  </view>
+
+  <!-- <scroll-view class="scrollarea" scroll-y type="list" style="flex: 1; height: 0;" wx:if="{{!loading && albums.length !== 0}}">
     <view class="general-container">
       <view wx:for="{{albums}}" wx:for-item="album" wx:key="id" wx:for-index="index">
         <album 
@@ -34,7 +39,7 @@
   </view>
 
 
-  <empty-state wx:if="{{!loading && albums.length === 0}}"></empty-state>
+  <empty-state wx:if="{{!loading && albums.length === 0}}"></empty-state> -->
 </view>
 <view style="position: fixed; bottom: 0;" wx:if="{{!loading && albums.length !== 0}}">
   <albums-bottom-menu></albums-bottom-menu>
