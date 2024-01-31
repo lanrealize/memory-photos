@@ -44,6 +44,9 @@ Component({
     },
 
     async onPublishClick() {
+      if (this.data.isCreating) {
+        return;
+      }
       this.setIsCreating(true);
       try {
         await postPhoto('广东', this.properties.page);

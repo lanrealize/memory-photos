@@ -1,6 +1,6 @@
 // pages/albums/albums.ts
 import { getAlbums } from '../../utils/apis';
-import { addSubstriber, addImage } from '../../utils/utils'
+import { addSubstriber } from '../../utils/utils'
 
 Page({
 
