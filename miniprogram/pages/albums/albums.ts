@@ -10,7 +10,7 @@ Page({
   data: {
     top: "100",
     albums: [] as object[],
-    loading: true
+    loading: false
   },
 
   /**
@@ -24,7 +24,15 @@ Page({
     app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
     addSubstriber(this.updateAlubms, 'updateAlbumsTrigger');
 
-    await this.updateAlubms();
+    try {
+      this.setLoading(true);
+      await this.updateAlubms();
+    } catch (e) {
+      console.log('Failed to updated albums.')
+    } finally {
+      this.setLoading(false);
+    }
+    
   },
 
   /**
@@ -89,7 +97,18 @@ Page({
   },
 
   async updateAlubms() {
-    const albumList = await getAlbums();
-    this.setAlbums(albumList);
+    try {
+      const albumList = await getAlbums();
+      this.setAlbums(albumList);
+    } catch (e) {
+      throw(e);
+    }
+
+  },
+
+  setLoading(loading: boolean) {
+    this.setData({
+      loading: loading
+    })
   }
 })
