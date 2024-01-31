@@ -10,8 +10,13 @@
     <view class="photo-creation-cancel" style="line-height: {{menuHeight}}px; display: flex;">
       <view style="margin: auto;" bindtap="onCancelClick">取消</view>
     </view>
-    <view class="photo-creation-submit" style="line-height: {{menuHeight}}px; display: flex;">
-      <view style="margin: auto;" bindtap="onPublishClick">添加</view>
+    <view class="photo-creation-submit"  bindtap="onPublishClick" style="line-height: {{menuHeight}}px; display: flex;">
+      <view class="sk-three-bounce" style="line-height: {{menuHeight}}px;">
+        <view class="sk-child sk-bounce1"></view>
+        <view class="sk-child sk-bounce2"></view>
+        <view class="sk-child"></view>
+      </view>
+      <view style="margin: auto;">添加</view>
     </view>
   </view>
   <view class="photo-creation-description">{{photoDescription}}...</view>
