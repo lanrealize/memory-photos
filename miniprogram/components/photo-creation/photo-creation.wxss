@@ -20,6 +20,7 @@
   margin-right: 0;
   margin-left: auto;
   padding-right: 4vw;
+  padding-left: 4vw;
 
   display: flex;
   flex-direction: row;
@@ -110,11 +111,10 @@
 }
 
 .sk-three-bounce {
-  width: 9vw;
+  width: 10vw;
   text-align: center;
   display: flex;
   flex-direction: row;
-  padding-left: 3vw;
 }
 
 .sk-three-bounce .sk-child {
