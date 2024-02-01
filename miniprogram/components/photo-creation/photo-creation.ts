@@ -82,6 +82,10 @@ Component({
       } catch(e) {
         console.log(e);
       }
+    },
+
+    async onRefreshClick() {
+      await this.setDescription();
     }
   },
 
