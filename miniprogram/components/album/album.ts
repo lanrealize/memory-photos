@@ -55,7 +55,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    opacity: 0
   },
 
   /**
@@ -67,6 +67,24 @@ Component({
       wx.navigateTo({
         url: '/pages/details/details'
       });
+    },
+
+    setOpacity(opacity: number) {
+      this.setData({
+        opacity: opacity
+      })
+    },
+
+    onLongPress() {
+      this.setOpacity(1);
+    },
+
+    onCoverClick() {
+      this.setOpacity(0);
+    },
+
+    onDeleteClick() {
+      
     }
   }
 })

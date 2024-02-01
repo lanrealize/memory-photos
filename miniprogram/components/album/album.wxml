@@ -1,5 +1,10 @@
 <!--components/album/album.wxml-->
-<view class="album-root">
+<view class="album-root" bindlongpress="onLongPress">
+  <view class="album-cover" style="opacity: {{opacity}}; pointer-events: {{opacity === 0 ? 'none' : 'auto'}};" catchtap="onCoverClick">
+    <view style="margin: auto; display: flex; flex-direction: column;">
+      <image src="/assets/icons/delete.svg" style="width: 10vw; height: 10vw;" catchtap="onDeleteClick"></image>
+    </view>
+  </view>
   <view class="album-main-title">
     <view class="album-main-title-part0">{{title}}</view>
     <view class="album-main-title-part1">{{subTitle}}</view>
