@@ -6,6 +6,21 @@
   flex-direction: column;
 }
 
+.navigation-home {
+  left: 6vw;
+  width: 5.5vw;
+  height: 5.5vw;
+  position: absolute;
+}
+
+.navigation-home-samll {
+  left: 6vw;
+  width: 5vw;
+  height: 5vw;
+  position: absolute;
+  padding-bottom: 0.5vw;
+}
+
 .navigation-seperate-line {
   width: 5vw;
   height: 0.4vw;

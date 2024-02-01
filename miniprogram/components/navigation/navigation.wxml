@@ -1,15 +1,25 @@
 <!--components/navigation/navigation.wxml-->
 <view wx:if="{{page == 'albums'}}" class="navigation-root">
-  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 35rpx;">相册列表</view>
+  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 35rpx; display: flex; align-items: center;">
+    <image src="/assets/icons/home.svg" class="navigation-home" bindtap="onHomeClick"></image>
+    相册列表
+  </view>
   <view class="navigation-seperate-line"></view>
   <view class="navigation-subtitle" style="line-height: {{menuHeight * 0.65}}px;">albums</view>
 </view>
 <view wx:if="{{page == 'details'}}" class="navigation-root">
-  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx;"><p>{{title}}<span style="font-size: 24rpx; padding-left: 1vw;">{{subTitle}}</span></p></view>
+  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx; display: flex; align-items: center;">
+    <p>{{title}}<span style="font-size: 24rpx; padding-left: 1vw;">{{subTitle}}</span></p>
+    <image src="/assets/icons/home.svg" class="navigation-home-samll" bindtap="onHomeClick"></image>
+  </view>
 </view>
 <view wx:if="{{page == 'index'}}" class="navigation-root">
-  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx; color: white;"><p>回忆影社</p></view>
+  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx;  color: white;">
+    <p>回忆影社</p>
+  </view>
 </view>
 <view wx:if="{{page == 'player'}}" class="navigation-root">
-  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx; color: white;"><p>浏览回忆</p></view>
+  <view style="padding-top: {{menuTop}}px; line-height: {{menuHeight}}px; font-size: 32rpx; color: white;">
+    <p>浏览回忆</p>
+  </view>
 </view>
