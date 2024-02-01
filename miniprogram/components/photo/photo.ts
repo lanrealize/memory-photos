@@ -35,7 +35,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    opacity: 0
   },
 
   /**
@@ -51,6 +51,20 @@ Component({
 
     onLongPress() {
       console.log('long')
+      this.setOpacity(1);
+    },
+
+    onBackCLick() {
+      this.setOpacity(0);
+    },
+
+    setOpacity(opacity: number) {
+      this.setData({
+        opacity: opacity
+      })
+    },
+
+    onCoverClick() {
     }
   }
 })

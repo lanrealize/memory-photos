@@ -15,7 +15,12 @@
       <image src="{{imageUrl}}" mode="heightFix" class="photo-main-main-photo" bindtap="previewImage" bindlongpress="onLongPress">
         <image src="/assets/logos-white-removed.png" mode="aspectFill" class="photo-main-main-photo-logos photo-main-main-photo-logos-size"></image>
         <!-- <view class="photo-main-main-photo-logos-bg photo-main-main-photo-logos-size"></view> -->
-        <view class="photo-main-main-photo-cover"></view>
+        <view class="photo-main-main-photo-cover" style="opacity: {{opacity}}; pointer-events: {{opacity === 0 ? 'none' : 'auto'}};"  catchtap="onCoverClick">
+          <view style="margin: auto; display: flex; flex-direction: column;">
+            <image src="/assets/icons/delete.svg" style="width: 8vw; height: 8vw; margin-bottom: 2vh;"></image>
+            <image src="/assets/icons/back.svg" style="width: 8vw; height: 8vw;" bindtap="onBackCLick"></image>
+          </view>
+        </view>
       </image>
       <view class="photo-main-main-placeholder"></view>
     </view>
