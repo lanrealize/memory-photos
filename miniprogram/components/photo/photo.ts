@@ -54,10 +54,6 @@ Component({
       this.setOpacity(1);
     },
 
-    onBackCLick() {
-      this.setOpacity(0);
-    },
-
     setOpacity(opacity: number) {
       this.setData({
         opacity: opacity
@@ -65,6 +61,7 @@ Component({
     },
 
     onCoverClick() {
+      this.setOpacity(0);
     }
   }
 })
