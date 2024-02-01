@@ -40,7 +40,6 @@ Component({
     setValue(date: string) {
       const indices = this.getIndicesFromDate(date);
       if (JSON.stringify(indices) === JSON.stringify(this.data.value)) {
-        console.log('equal');
         return;
       } else {
         this.setData({

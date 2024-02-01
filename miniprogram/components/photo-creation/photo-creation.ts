@@ -21,7 +21,8 @@ Component({
     photoPath: '',
     photoDescription: '',
     isCreating: false,
-    isRefreshing: false
+    isRefreshing: false,
+    locationValue: ''
   },
 
   /**
@@ -51,8 +52,9 @@ Component({
       }
       this.setIsCreating(true);
       try {
-        await postPhoto('广东', this.properties.page);
         const app: IAppOption = getApp();
+        const location = app.globalData.photoCreationLocation.value;
+        await postPhoto(location, this.properties.page);
         app.setPhotoCreationShown(false);
         const currentPage = getCurrentPages().pop()?.route;
         if (currentPage === 'pages/details/details') {
@@ -96,6 +98,22 @@ Component({
 
     async onRefreshClick() {
       await this.setDescription();
+    },
+
+    setLocationValue(locationValue: string) {
+      if (locationValue === this.data.locationValue) {
+        return;
+      } else {
+        this.setData({
+          locationValue: locationValue
+        });
+      }
+    },
+
+    onLocationInput(event: any) {
+      const location = event.detail.value;
+      const app: IAppOption = getApp();
+      app.setPhotoCreationLocation(location);
     }
   },
 
@@ -103,10 +121,12 @@ Component({
     created: function () {
       this.setPhotoPath = this.setPhotoPath.bind(this);
       this.setPhotoDescription = this.setPhotoDescription.bind(this);
+      this.setLocationValue = this.setLocationValue.bind(this);
 
       const app: IAppOption = getApp();
       app.globalData.photoCreationPath.subscribers.push(this.setPhotoPath);
       app.globalData.photoCreationDescription.subscribers.push(this.setPhotoDescription);
+      app.globalData.photoCreationLocation.subscribers.push(this.setLocationValue);
     },
 
     attached: function () {

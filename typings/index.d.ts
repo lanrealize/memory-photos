@@ -8,6 +8,7 @@ interface IAppOption {
     photoCreationPath?: any,
     photoCreationTimestamp?: any,
     photoCreationDescription?: any,
+    photoCreationLocation?: any,
     updateAlbumPhotosTrigger?: any,
     updateAlbumsTrigger?: any,
     detailsViewMode?: any
@@ -23,6 +24,8 @@ interface IAppOption {
   setPhotoCreationTimestamp?: any,
 
   setPhotoCreationDescription?: any,
+
+  setPhotoCreationLocation?: any,
 
   updateAlbumPhotosTriggerEmit?: any,
   

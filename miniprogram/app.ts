@@ -22,7 +22,10 @@ App<IAppOption>({
       value: undefined,
       subscribers: []
     },
-
+    photoCreationLocation: {
+      value: undefined,
+      subscribers: []
+    },
     updateAlbumPhotosTrigger: {
       subscribers: []
     },
@@ -77,6 +80,11 @@ App<IAppOption>({
   setDetailsViewMode(mode: string) {
     this.globalData.detailsViewMode.value = mode;
     this.globalData.detailsViewMode.subscribers.forEach((callback: (value: string) => void) => callback(mode));
+  },
+
+  setPhotoCreationLocation(location: string) {
+    this.globalData.photoCreationLocation.value = location;
+    this.globalData.photoCreationLocation.subscribers.forEach((callback: (value: string) => void) => callback(location));
   }
 
 })

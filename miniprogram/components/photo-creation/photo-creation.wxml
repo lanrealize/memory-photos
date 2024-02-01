@@ -35,7 +35,7 @@
   </view>
   <view class="photo-creation-location">
     <image src="/assets/icons/location_e.svg" class="photo-creation-location-icon"></image>
-    <view class="photo-creation-location-text"><input placeholder="请输入位置信息" bindinput="onInput" /></view>
+    <view class="photo-creation-location-text"><input placeholder="请输入位置信息" value="{{locationValue}}" bindinput="onLocationInput" /></view>
   </view>
   <!-- <view class="photo-creation-copyright">
     <p>© 该照片版全属于作者。<span>

@@ -80,6 +80,7 @@ export const addImage = async () => {
   const imagePath = await uploadImage();
   const app: IAppOption = getApp();
   app.setPhotoCreationPath(imagePath);
+  app.setPhotoCreationLocation('');
   setPickerInitialValue();
   app.setPhotoCreationShown(true);
 }
@@ -105,7 +106,8 @@ export const postPhoto = async (location: string, type: string) => {
       const timestamp = app.globalData.photoCreationTimestamp.value.split('/');
       const description = app.globalData.photoCreationDescription.value;
       const mainTitle = timestamp[1] + '月'
-      const subTitle = timestamp[0] + '·' + location
+      const locationInfo = location ? '·' + location : '';
+      const subTitle = timestamp[0] + locationInfo;
       await putAlbums(mainTitle, subTitle, description);
     }
   } catch (e) {
