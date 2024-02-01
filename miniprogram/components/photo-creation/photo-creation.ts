@@ -1,4 +1,5 @@
 // components/photo-creation/photo-creation.ts
+import { getRandomWord } from '../../utils/apis';
 import { postPhoto } from '../../utils/utils'
 
 Component({
@@ -71,6 +72,16 @@ Component({
       this.setData({
         isCreating: isCreating
       })
+    },
+
+    async setDescription() {
+      try {
+        const app: IAppOption = getApp()
+        const description = await getRandomWord();
+        app.setPhotoCreationDescription(description);
+      } catch(e) {
+        console.log(e);
+      }
     }
   },
 
@@ -86,11 +97,12 @@ Component({
 
     attached: function () {
       const app: IAppOption = getApp();
-      this.setData({
-        menuHeight: app.globalData.navigationInfo.menuHeight,
-        menuTop: app.globalData.navigationInfo.menuTop,
+      this.setDescription().then(() => {
+        this.setData({
+          menuHeight: app.globalData.navigationInfo.menuHeight,
+          menuTop: app.globalData.navigationInfo.menuTop,
+        });
       });
-      app.setPhotoCreationDescription('最近认识了很多人，但我知道他们都不是你。');
     }
   }
 })

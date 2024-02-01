@@ -207,3 +207,22 @@ export const deletePhoto = async (photoID: string): Promise<any> => {
     }
   })
 }
+
+export const getRandomWord = async (): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    try {
+      wx.request({
+        url: devUrlPrefix + '/words/random',
+        method: 'GET',
+        success: (res: any) => {
+          resolve(res.data[0].content)
+        },
+        fail: (e) => {
+          reject(e)
+        }
+      })
+    } catch (e) {
+      reject(e);
+    }
+  })
+}
