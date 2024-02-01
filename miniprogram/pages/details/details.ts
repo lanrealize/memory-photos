@@ -1,5 +1,5 @@
 // pages/details/details.ts
-import { getAlbumPhotos } from '../../utils/apis';
+import { getAlbumPhotos, getAlbum } from '../../utils/apis';
 import { parseDate } from '../../utils/utils'
 
 
@@ -19,15 +19,25 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  async onLoad() {
-    const app: IAppOption = getApp();
+  async onLoad(options) {
+    if ((options.openID && options.albumID)) {
+      console.log('Is shared');
+      wx.setStorageSync('openID', options.openID);
+      wx.setStorageSync('albumID', options.albumID);
+    }
+
+    let albumID = wx.getStorageSync('albumID');
+    const album = await getAlbum(albumID);
+
     this.setData({
-      title: app.globalData.detailsTitle.title,
-      subTitle: app.globalData.detailsTitle.subTitle
+      title: album.title,
+      subTitle: album.subTitle
     });
 
     this.setPhotoCreationDisplay = this.setPhotoCreationDisplay.bind(this);
     this.updatePhotos = this.updatePhotos.bind(this);
+
+    const app: IAppOption = getApp();
 
     app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
     app.globalData.updateAlbumPhotosTrigger.subscribers.push(this.updatePhotos);
@@ -83,7 +93,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage() {
-
+    let openID = wx.getStorageSync('openID');
+    let albumID = wx.getStorageSync('albumID');
+    return {
+      title: '回忆是时光的剪影',
+      path: '/pages/details/details?openID=' + openID + '&albumID=' + albumID
+    }
   },
 
   setAlbumPhotos(albumPhotos: any): void {

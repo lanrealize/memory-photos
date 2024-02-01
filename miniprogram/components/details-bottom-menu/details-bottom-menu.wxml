@@ -12,7 +12,7 @@
       <image src="/assets/icons/play.svg" class="details-bottom-menu-icon"></image>
       <view class="details-bottom-menu-icon-text">播放</view>
     </view>
-    <view class="details-bottom-menu-main-share details-bottom-menu-icon-container details-bottom-menu-boader">
+    <view class="details-bottom-menu-main-share details-bottom-menu-icon-container details-bottom-menu-boader" bindtap="onShareTap">
       <image src="/assets/icons/share.svg" class="details-bottom-menu-icon"></image>
       <view class="details-bottom-menu-icon-text">分享</view>
     </view>
