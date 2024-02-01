@@ -1,6 +1,6 @@
 <!--pages/details/details.wxml-->
 <view style="display: flex; flex-direction: column; height: 100vh;">
-  <navigation page="details"></navigation>
+  <navigation page="details" title="{{title}}" subTitle="{{subTitle}}"></navigation>
   <scroll-view class="scrollarea" scroll-y type="list" style="flex: 1; height: 0;">
     <view style="height: {{6 + 1.5}}vh; width: 100vw;"></view>
     <view class="general-container" style="{{style}}">

@@ -6,6 +6,10 @@ App<IAppOption>({
       menuHeight: undefined,
       menuTop: undefined
     },
+    detailsTitle: {
+      title: undefined,
+      subTitle: undefined
+    },
     photoCreationShown: {
       value: undefined,
       subscribers: []

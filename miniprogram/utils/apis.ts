@@ -116,6 +116,37 @@ export const getAlbums = async (): Promise<{ images: {imageUrl: string}[] }[]> =
   })
 }
 
+export const getAlbum = (albumId: string) => {
+  return new Promise((resolve, reject) => {
+    if (!albumId) {
+      reject('Empty album Id.')
+    }
+
+    try {
+      let openID = wx.getStorageSync('openID');
+      if (!openID) {
+        reject('Without openID');
+      }
+
+      wx.request({
+        url: devUrlPrefix + '/users/' + openID + '/albums/' + albumId,
+        method: 'GET',
+        data: {
+          type: 'createdAlbums'
+        },
+        success: (res: any) => {
+          resolve(`Get ${albumId} deleted.`)
+        },
+        fail: (e) => {
+          reject(e)
+        }
+      })
+    } catch (e) {
+      reject(e)
+    }
+  })
+}
+
 export const postPhotos = async () => {
   return new Promise((resolve, reject) => {
     try {

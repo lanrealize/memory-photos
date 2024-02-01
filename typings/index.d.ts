@@ -4,6 +4,7 @@ interface IAppOption {
   globalData: {
     userInfo?: WechatMiniprogram.UserInfo,
     navigationInfo?: any,
+    detailsTitle?: any,
     photoCreationShown?: any,
     photoCreationPath?: any,
     photoCreationTimestamp?: any,

@@ -11,17 +11,24 @@ Page({
   data: {
     albumPhotos: [] as object[],
     top: "100",
-    style: 'opacity: 1; transition: opacity 0.5s ease-in-out;'
+    style: 'opacity: 1; transition: opacity 0.5s ease-in-out;',
+    title: "",
+    subTitle: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   async onLoad() {
+    const app: IAppOption = getApp();
+    this.setData({
+      title: app.globalData.detailsTitle.title,
+      subTitle: app.globalData.detailsTitle.subTitle
+    });
+
     this.setPhotoCreationDisplay = this.setPhotoCreationDisplay.bind(this);
     this.updatePhotos = this.updatePhotos.bind(this);
 
-    const app: IAppOption = getApp();
     app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
     app.globalData.updateAlbumPhotosTrigger.subscribers.push(this.updatePhotos);
     app.globalData.detailsViewMode.subscribers.push(this.updatePhotos);

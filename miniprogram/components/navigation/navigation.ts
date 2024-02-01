@@ -8,6 +8,14 @@ Component({
     page: {
       type: String,
       value: undefined
+    },
+    title: {
+      type: String,
+      value: undefined
+    },
+    subTitle: {
+      type: String,
+      value: undefined
     }
   },
 

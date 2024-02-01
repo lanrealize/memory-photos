@@ -66,6 +66,9 @@ Component({
   methods: {
     onViewClick() {
       wx.setStorageSync('albumID', this.properties.albumId);
+      const app: IAppOption = getApp();
+      app.globalData.detailsTitle.title = this.properties.title;
+      app.globalData.detailsTitle.subTitle = this.properties.subTitle; 
       wx.navigateTo({
         url: '/pages/details/details'
       });
