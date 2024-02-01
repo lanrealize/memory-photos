@@ -56,6 +56,39 @@ export const putAlbums = (title: string, subTitle: string) => {
   })
 }
 
+export const deleteAlbum = (albumId: string) => {
+  return new Promise((resolve, reject) => {
+    if (!albumId) {
+      reject('Empty album Id.')
+    }
+
+    try {
+      let openID = wx.getStorageSync('openID');
+      if (!openID) {
+        reject('Without openID');
+      }
+      const app: IAppOption = getApp();
+
+      wx.request({
+        url: devUrlPrefix + '/users/' + openID + '/albums/' + albumId,
+        method: 'DELETE',
+        data: {
+          type: 'createdAlbums'
+        },
+        success: (res: any) => {
+          app.updateAlbumsTriggerEmit();
+          resolve(`Album ${albumId} deleted.`)
+        },
+        fail: (e) => {
+          reject(e)
+        }
+      })
+    } catch (e) {
+      reject(e)
+    }
+  })
+}
+
 export const getAlbums = async (): Promise<{ images: {imageUrl: string}[] }[]> => {
   return new Promise((resolve, reject) => {
     try {
@@ -163,7 +196,7 @@ export const deletePhoto = async (photoID: string): Promise<any> => {
         },
         success: (res: any) => {
           app.updateAlbumPhotosTriggerEmit();
-          resolve('Photo deteled successfully.');
+          resolve(`Photo ${photoID} deleted.`);
         },
         fail: (e) => {
           reject(e)

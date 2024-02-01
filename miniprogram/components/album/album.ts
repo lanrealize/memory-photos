@@ -1,4 +1,6 @@
 // components/album/album.ts
+import { deleteAlbum } from "../../utils/apis"
+
 Component({
 
   /**
@@ -83,8 +85,9 @@ Component({
       this.setOpacity(0);
     },
 
-    onDeleteClick() {
-      
+    async onDeleteClick() {
+      await deleteAlbum(this.properties.albumId);
+      this.setOpacity(0);
     }
   }
 })

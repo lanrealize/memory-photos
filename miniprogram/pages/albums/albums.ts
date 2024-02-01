@@ -1,6 +1,5 @@
 // pages/albums/albums.ts
 import { getAlbums } from '../../utils/apis';
-import { addSubstriber } from '../../utils/utils'
 
 Page({
 
@@ -22,7 +21,7 @@ Page({
 
     const app: IAppOption = getApp();
     app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
-    addSubstriber(this.updateAlubms, 'updateAlbumsTrigger');
+    app.globalData.updateAlbumsTrigger.subscribers.push(this.updateAlubms);
 
     try {
       this.setLoading(true);
