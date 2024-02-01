@@ -33,6 +33,7 @@
     </view>
   </view>
 
+
   <empty-state wx:if="{{!loading && albums.length === 0}}"></empty-state>
 </view>
 <view style="position: fixed; bottom: 0;" wx:if="{{!loading && albums.length !== 0}}">

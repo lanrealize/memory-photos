@@ -1,5 +1,5 @@
 <!--components/photo-loading/photo-loading.wxml-->
 <view class="image-container" style="width: {{width}}px; height: {{height}}px;">
-  <!-- <view class="placeholder"></view> -->
-  <!-- <view class="loading-line"></view> -->
+  <view class="placeholder"></view>
+  <view class="loading-line"></view>
 </view>
