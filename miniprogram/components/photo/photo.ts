@@ -56,7 +56,6 @@ Component({
     },
 
     onLongPress() {
-      console.log('long')
       this.setOpacity(1);
     },
 

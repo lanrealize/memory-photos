@@ -146,7 +146,6 @@ export const getAlbumPhotos = async (): Promise<{timestamp: string, imageUrl: st
 }
 
 export const deletePhoto = async (photoID: string): Promise<any> => {
-  console.log(photoID)
   return new Promise((resolve, reject) => {
     try {
       let openID = wx.getStorageSync('openID');
