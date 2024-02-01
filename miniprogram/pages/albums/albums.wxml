@@ -3,7 +3,7 @@
   <navigation page="albums"></navigation>
 
   <scroll-view class="scrollarea" scroll-y type="list" style="flex: 1; height: 0;" wx:if="{{!loading && albums.length !== 0}}">
-    <view class="general-container">
+    <view class="general-container" style="{{style}}">
       <view wx:for="{{albums}}" wx:for-item="album" wx:key="id" wx:for-index="index">
         <album 
           albumId="{{album.id}}"

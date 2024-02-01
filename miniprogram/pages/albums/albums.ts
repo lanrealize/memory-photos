@@ -9,7 +9,8 @@ Page({
   data: {
     top: "100",
     albums: [] as object[],
-    loading: false
+    loading: false,
+    style: 'opacity: 1; transition: opacity 0.5s ease-in-out;'
   },
 
   /**
@@ -98,6 +99,7 @@ Page({
   async updateAlubms() {
     try {
       const albumList = await getAlbums();
+      this.setFadeInOut();
       this.setAlbums(albumList);
     } catch (e) {
       throw(e);
@@ -109,5 +111,14 @@ Page({
     this.setData({
       loading: loading
     })
+  },
+
+  setFadeInOut() {
+    this.setData({
+      style: 'opacity: 0;'
+    });
+    this.setData({
+      style: 'opacity: 1; transition: opacity 0.5s ease-in-out;'
+    });
   }
 })
