@@ -26,7 +26,7 @@ export const postAlbums = async () => {
   })
 }
 
-export const putAlbums = (title: string, subTitle: string) => {
+export const putAlbums = (title: string, subTitle: string, description: string) => {
   return new Promise((resolve, reject) => {
     try {
       let openID = wx.getStorageSync('openID');
@@ -41,7 +41,8 @@ export const putAlbums = (title: string, subTitle: string) => {
         data: {
           type: 'createdAlbums',
           title: title,
-          subTitle: subTitle
+          subTitle: subTitle,
+          description: description
         },
         success: (res: any) => {
           resolve(`Album ${albumID} updated.`)

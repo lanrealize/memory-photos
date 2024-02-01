@@ -102,10 +102,11 @@ export const postPhoto = async (location: string, type: string) => {
       wx.setStorageSync('albumID', albumID);
       await postPhotos();
       const app: IAppOption = getApp();
-      const timestamp = app.globalData.photoCreationTimestamp.value.split('/')
+      const timestamp = app.globalData.photoCreationTimestamp.value.split('/');
+      const description = app.globalData.photoCreationDescription.value;
       const mainTitle = timestamp[1] + '月'
       const subTitle = timestamp[0] + '·' + location
-      await putAlbums(mainTitle, subTitle);
+      await putAlbums(mainTitle, subTitle, description);
     }
   } catch (e) {
     throw(e);
