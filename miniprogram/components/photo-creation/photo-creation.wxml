@@ -12,9 +12,9 @@
     </view>
     <view class="photo-creation-submit"  bindtap="onPublishClick" style="line-height: {{menuHeight}}px; display: flex;">
       <view class="sk-three-bounce" style="line-height: {{menuHeight}}px;" wx:if="{{isCreating}}">
-        <view class="sk-child sk-bounce1"></view>
-        <view class="sk-child sk-bounce2"></view>
-        <view class="sk-child"></view>
+        <view class="sk-child sk-bounce1 photo-creation-color-white"></view>
+        <view class="sk-child sk-bounce2 photo-creation-color-white"></view>
+        <view class="sk-child photo-creation-color-white"></view>
       </view>
       <view style="margin: auto;">添加</view>
     </view>
@@ -23,6 +23,11 @@
   <view class="photo-creation-description-action">
     <image src="/assets/icons/edit_gray.svg" class="photo-creation-description-action-item" style="margin-left: auto;"></image>
     <image src="/assets/icons/refresh.svg" class="photo-creation-description-action-item" bindtap="onRefreshClick"></image>
+    <!-- <view class="sk-three-bounce" style="line-height: {{menuHeight}}px;">
+      <view class="sk-child sk-bounce1 photo-creation-color-black"></view>
+      <view class="sk-child sk-bounce2 photo-creation-color-black"></view>
+      <view class="sk-child photo-creation-color-black"></view>
+    </view> -->
   </view>
   <image src="{{photoPath}}" class="photo-creation-image" mode="aspectFill"></image>
   <view class="photo-creation-time-picker">

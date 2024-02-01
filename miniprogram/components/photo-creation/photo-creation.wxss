@@ -121,13 +121,20 @@
 .sk-three-bounce .sk-child {
   width: 1.5vw;
   height: 1.5vw;
-  background-color: #ffffff;
   border-radius: 100%;
   display: inline-block;
   animation: sk-three-bounce 1.4s ease-in-out 0s infinite both;
   margin-top: auto;
   margin-bottom: auto;
   margin-left: 0.5vw;
+}
+
+.photo-creation-color-white {
+  background-color: #ffffff;
+}
+
+.photo-creation-color-black {
+  background-color: #808080;
 }
 
 .sk-three-bounce .sk-bounce1 {
