@@ -12,9 +12,10 @@
     <view class="photo-main-line"></view>
     <view class="photo-main-main">
       <view class="photo-main-main-text">{{description}}</view>
-      <image src="{{imageUrl}}" mode="heightFix" class="photo-main-main-photo" bindtap="previewImage">
+      <image src="{{imageUrl}}" mode="heightFix" class="photo-main-main-photo" bindtap="previewImage" bindlongpress="onLongPress">
         <image src="/assets/logos-white-removed.png" mode="aspectFill" class="photo-main-main-photo-logos photo-main-main-photo-logos-size"></image>
         <!-- <view class="photo-main-main-photo-logos-bg photo-main-main-photo-logos-size"></view> -->
+        <view class="photo-main-main-photo-cover"></view>
       </image>
       <view class="photo-main-main-placeholder"></view>
     </view>

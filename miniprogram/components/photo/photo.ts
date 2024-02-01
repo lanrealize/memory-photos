@@ -47,6 +47,10 @@ Component({
         current: this.properties.imageUrl,
         urls: [this.properties.imageUrl]
       });
+    },
+
+    onLongPress() {
+      console.log('long')
     }
   }
 })
