@@ -144,3 +144,34 @@ export const getAlbumPhotos = async (): Promise<{timestamp: string, imageUrl: st
     }
   })
 }
+
+export const deletePhoto = async (photoID: string): Promise<any> => {
+  console.log(photoID)
+  return new Promise((resolve, reject) => {
+    try {
+      let openID = wx.getStorageSync('openID');
+      let albumID = wx.getStorageSync('albumID');
+      const app: IAppOption = getApp();
+
+      if (!openID || !albumID) {
+        reject('Without openId or albumID');
+      }
+      wx.request({
+        url: devUrlPrefix + '/users/' + openID + '/albums/' + albumID + '/pictures/' + photoID,
+        method: 'DELETE',
+        data: {
+          type: 'createdAlbums',
+        },
+        success: (res: any) => {
+          app.updateAlbumPhotosTriggerEmit();
+          resolve('Photo deteled successfully.');
+        },
+        fail: (e) => {
+          reject(e)
+        }
+      })
+    } catch (e) {
+      reject(e);
+    }
+  })
+}

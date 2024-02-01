@@ -5,7 +5,7 @@
     <view style="height: {{6 + 1.5}}vh; width: 100vw;"></view>
     <view class="general-container" style="{{style}}">
       <view wx:for="{{albumPhotos}}" wx:for-item="photo" wx:key="index" wx:for-index="index">
-        <photo title="{{photo.title}}" subTitle="{{photo.subTitle}}" imageUrl="{{photo.imageUrl}}" description="{{photo.description}}">
+        <photo photoId="{{photo.id}}" title="{{photo.title}}" subTitle="{{photo.subTitle}}" imageUrl="{{photo.imageUrl}}" description="{{photo.description}}">
         </photo>
       </view>
       <photo type="end" title="无更多内容"></photo>

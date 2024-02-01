@@ -1,10 +1,16 @@
 // components/photo/photo.ts
+import { deletePhoto } from '../../utils/apis'
+
 Component({
 
   /**
    * 组件的属性列表
    */
   properties: {
+    photoId: {
+      type: String,
+      value: undefined
+    },
     title: {
       type: String,
       value: undefined
@@ -61,6 +67,11 @@ Component({
     },
 
     onCoverClick() {
+      this.setOpacity(0);
+    },
+
+    async onDeleteClick() {
+      await deletePhoto(this.properties.photoId);
       this.setOpacity(0);
     }
   }
