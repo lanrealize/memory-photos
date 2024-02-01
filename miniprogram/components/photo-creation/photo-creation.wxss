@@ -112,10 +112,18 @@
 }
 
 .sk-three-bounce {
-  width: 10vw;
   text-align: center;
   display: flex;
   flex-direction: row;
+}
+
+.sk-three-bounce-refresh {
+  width: 7.6vw;
+  padding-left: 3.8vw;
+}
+
+.sk-three-bounce-publish {
+  width: 10vw;
 }
 
 .sk-three-bounce .sk-child {
