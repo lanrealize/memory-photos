@@ -4,7 +4,8 @@
     "album": "/components/album/album",
     "albums-bottom-menu": "/components/albums-bottom-menu/albums-bottom-menu",
     "photo-creation": "/components/photo-creation/photo-creation",
-    "empty-state": "/components/albums-empty-state/albums-empty-state"
+    "empty-state": "/components/albums-empty-state/albums-empty-state",
+    "photo-loading": "/components/photo-loading/photo-loading"
   },
   "navigationBarTextStyle": "black",
   "disableScroll": true
