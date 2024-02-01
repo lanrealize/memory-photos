@@ -22,8 +22,8 @@
   <view class="photo-creation-description">{{photoDescription}}...</view>
   <view class="photo-creation-description-action">
     <image src="/assets/icons/edit_gray.svg" class="photo-creation-description-action-item" style="margin-left: auto;"></image>
-    <image src="/assets/icons/refresh.svg" class="photo-creation-description-action-item" bindtap="onRefreshClick"></image>
-    <view class="sk-three-bounce sk-three-bounce-refresh" style="line-height: {{menuHeight}}px;">
+    <image src="/assets/icons/refresh.svg" class="photo-creation-description-action-item" bindtap="onRefreshClick" wx:if="{{!isRefreshing}}"></image>
+    <view class="sk-three-bounce sk-three-bounce-refresh" style="line-height: {{menuHeight}}px;" wx:if="{{isRefreshing}}">
       <view class="sk-child sk-bounce1 photo-creation-color-black"></view>
       <view class="sk-child sk-bounce2 photo-creation-color-black"></view>
       <view class="sk-child photo-creation-color-black"></view>

@@ -20,7 +20,8 @@ Component({
   data: {
     photoPath: '',
     photoDescription: '',
-    isCreating: false
+    isCreating: false,
+    isRefreshing: false
   },
 
   /**
@@ -74,13 +75,22 @@ Component({
       })
     },
 
+    setIsRefreshing(isRefreshing: boolean) {
+      this.setData({
+        isRefreshing: isRefreshing
+      })
+    },
+
     async setDescription() {
+      this.setIsRefreshing(true);
       try {
         const app: IAppOption = getApp()
         const description = await getRandomWord();
         app.setPhotoCreationDescription(description);
       } catch(e) {
         console.log(e);
+      } finally {
+        this.setIsRefreshing(false);
       }
     },
 
