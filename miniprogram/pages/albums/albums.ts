@@ -32,7 +32,7 @@ Page({
     } finally {
       this.setLoading(false);
     }
-    
+
   },
 
   /**
@@ -60,7 +60,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-    
+
   },
 
   /**
@@ -102,7 +102,7 @@ Page({
       this.setFadeInOut();
       this.setAlbums(albumList);
     } catch (e) {
-      throw(e);
+      throw (e);
     }
 
   },
@@ -114,11 +114,13 @@ Page({
   },
 
   setFadeInOut() {
-    this.setData({
-      style: 'opacity: 0;'
-    });
-    this.setData({
-      style: 'opacity: 1; transition: opacity 0.5s ease-in-out;'
+    wx.nextTick(() => {
+      this.setData({
+        style: 'opacity: 0;'
+      });
+      this.setData({
+        style: 'opacity: 1; transition: opacity 0.5s ease-in-out;'
+      });
     });
   }
 })
