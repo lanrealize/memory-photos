@@ -1,6 +1,6 @@
 // components/photo-player/photo-player.ts
 Component({
-  
+
   properties: {
     imageList: {
       type: Array,
@@ -8,7 +8,8 @@ Component({
         let imageList: any[] = []
         for (let i in newVal) {
           imageList.push({
-            img: newVal[i],
+            img: newVal[i].imageUrl,
+            idx: newVal[i].idx,
             animate: `animate`
           })
         }
@@ -51,21 +52,26 @@ Component({
 
   methods: {
     startAnimation() {
-      if (this.data.playerList.length > 1) {
-        this.setData({
-          canAnimation: true,
-          intervalPlay: setInterval(() => {
-            if (this.data.currentIndex < this.data.playerList.length - 1) {
-              this.setData({
-                currentIndex: this.data.currentIndex + 1
-              })
-            } else {
-              this.setData({
-                currentIndex: 0
-              })
-            }
-          }, this.data.animationDuration)
-        })
+      if (0 != this.data.intervalPlay) {
+        return;
+      } else {
+        this.stopAnimation();
+        if (this.data.playerList.length > 1) {
+          this.setData({
+            canAnimation: true,
+            intervalPlay: setInterval(() => {
+              if (this.data.currentIndex < this.data.playerList.length - 1) {
+                this.setData({
+                  currentIndex: this.data.currentIndex + 1
+                })
+              } else {
+                this.setData({
+                  currentIndex: 0
+                })
+              }
+            }, this.data.animationDuration)
+          })
+        }
       }
     },
 

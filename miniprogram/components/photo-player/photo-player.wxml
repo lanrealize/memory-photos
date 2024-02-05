@@ -1,29 +1,23 @@
 <!--components/photo-player/photo-player.wxml-->
 <view class="player-root">
-  <view class="player-indexing"><p style="margin: auto;">{{currentIndex + 1}}/{{imageAmount}}</p></view>
+  <view class="player-indexing">
+    <p style="margin: auto;">{{currentIndex + 1}}/{{imageAmount}}</p>
+  </view>
   <view class="image-player-content">
 
-    <view 
-      style="animation-duration: {{animationDuration/1000}}s;" 
-      class="image-item {{currentIndex == index ? (canAnimation ? (item.animate + ' current-img') : 'current-img') : ''}}" 
-      wx:for="{{playerList}}"
-      wx:key="index" 
-      wx:for-index="index">
+    <view style="animation-duration: {{animationDuration/1000}}s;" class="image-item {{currentIndex == index ? (canAnimation ? (item.animate + ' current-img') : 'current-img') : ''}}" wx:for="{{playerList}}" wx:key="index" wx:if="{{((item.idx - currentIndex) >= -2 && (item.idx - currentIndex) <= 2)}}" wx:for-index="index">
       <image class="img" src="{{item.img}}" mode="aspectFit"></image>
 
-      <view 
-        wx:if="{{needBackground}}" 
-        class="back-img-blur"
-        style="opacity: {{backgroundOpacity}};">
-          <image mode="aspectFill" src="{{playerList[currentIndex].img}}"></image>
+      <view wx:if="{{needBackground}}" class="back-img-blur" style="opacity: {{backgroundOpacity}};">
+        <image mode="aspectFill" src="{{playerList[currentIndex].img}}"></image>
       </view>
 
       <!-- <view 
         wx:if="{{needBackground}}" 
         class="backdrop-blur-bg">
       </view> -->
-      
+
     </view>
-    
+
   </view>
 </view>

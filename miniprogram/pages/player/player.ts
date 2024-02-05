@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    backImageUrls: [] as string[],
+    backImageUrls: [] as object[],
     backImageAmount: 0
   },
 
@@ -87,10 +87,16 @@ Page({
       }
     });
     const bgUrls = photoList.map(item => item.imageUrl);
-    this.setBgPhotos(bgUrls);
+    let indexedBgUrls = bgUrls.map((imageUrl, index) => {
+      return {
+        imageUrl: imageUrl,
+        idx: index
+      };
+    });
+    this.setBgPhotos(indexedBgUrls);
   },
 
-  setBgPhotos(bgUrls: string[]) {
+  setBgPhotos(bgUrls: object[]) {
     this.setData({
       backImageUrls: bgUrls,
       backImageAmount: bgUrls.length
