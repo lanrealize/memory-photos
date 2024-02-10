@@ -52,6 +52,7 @@
 
 .details-bottom-menu-main-share {
   grid-area: share;
+  position: relative;
 }
 
 .details-bottom-menu-add {
@@ -80,4 +81,12 @@
 .details-bottom-menu-icon-text {
   font-size: 18rpx;
   color: #808080;
+}
+
+.details-bottom-menu-icon-share {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0;
 }

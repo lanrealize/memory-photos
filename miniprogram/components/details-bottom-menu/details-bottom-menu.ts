@@ -33,11 +33,6 @@ Component({
       wx.navigateTo({
         url: '/pages/player/player'
       });
-    },
-
-    onShareTap() {
-      wx.showShareMenu({
-      });
     }
   }
 })
