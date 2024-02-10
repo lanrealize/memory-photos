@@ -81,9 +81,11 @@ App<IAppOption>({
     this.globalData.updateAlbumsTrigger.subscribers.forEach((callback: () => void) => callback());
   },
 
-  setDetailsViewMode(mode: string) {
+  async setDetailsViewMode(mode: string) {
     this.globalData.detailsViewMode.value = mode;
-    this.globalData.detailsViewMode.subscribers.forEach((callback: (value: string) => void) => callback(mode));
+    for (const callback of this.globalData.detailsViewMode.subscribers) {
+      await callback(mode);
+    }
   },
 
   setPhotoCreationLocation(location: string) {

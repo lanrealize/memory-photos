@@ -44,7 +44,6 @@ Page({
     app.globalData.detailsViewMode.subscribers.push(this.updatePhotos);
 
     app.setDetailsViewMode('normal');
-    await this.updatePhotos();
   },
 
   /**
