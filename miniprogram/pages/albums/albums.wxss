@@ -19,8 +19,8 @@ page {
 }
 
 .albums-loading-text {
-  margin-left: auto; 
-  margin-right: auto; 
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 30vh;
   color: rgb(160, 160, 160);
 }
@@ -53,7 +53,10 @@ page {
 }
 
 @-webkit-keyframes sk-three-bounce {
-  0%, 80%, 100% {
+
+  0%,
+  80%,
+  100% {
     transform: scale(0);
   }
 
@@ -63,11 +66,20 @@ page {
 }
 
 @keyframes sk-three-bounce {
-  0%, 80%, 100% {
+
+  0%,
+  80%,
+  100% {
     transform: scale(0);
   }
 
   40% {
     transform: scale(1);
   }
+}
+
+.albums-line {
+  width: 100vw;
+  border-bottom: solid 0.8px rgb(235, 235, 235);
+  margin-left: -5vw;
 }
