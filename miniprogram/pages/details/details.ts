@@ -95,7 +95,7 @@ Page({
     let openID = wx.getStorageSync('openID');
     let albumID = wx.getStorageSync('albumID');
     return {
-      title: '回忆是时光的剪影',
+      title: '你的朋友分享了一段回忆。',
       path: '/pages/details/details?openID=' + openID + '&albumID=' + albumID
     }
   },
@@ -138,8 +138,10 @@ Page({
     this.setData({
       style: 'opacity: 0;'
     });
-    this.setData({
-      style: 'opacity: 1; transition: opacity 0.5s ease-in-out;'
-    });
+    wx.nextTick(() => {
+      this.setData({
+        style: 'opacity: 1; transition: opacity 0.5s ease-in-out;'
+      });
+    })
   }
 })
