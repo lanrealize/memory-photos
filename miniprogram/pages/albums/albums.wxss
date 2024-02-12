@@ -27,6 +27,6 @@ page {
 
 .albums-line {
   width: 100vw;
-  border-bottom: solid 0.8px rgb(235, 235, 235);
+  border-bottom: solid 0.8px rgb(229, 229, 229);
   margin-left: -5vw;
 }
