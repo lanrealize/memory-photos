@@ -24,15 +24,6 @@ Page({
     app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
     app.globalData.updateAlbumsTrigger.subscribers.push(this.updateAlubms);
 
-    try {
-      this.setLoading(true);
-      await this.updateAlubms();
-    } catch (e) {
-      console.log('Failed to updated albums.')
-    } finally {
-      this.setLoading(false);
-    }
-
   },
 
   /**
@@ -45,8 +36,15 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {
-
+  async onShow() {
+    try {
+      this.setLoading(true);
+      await this.updateAlubms();
+    } catch (e) {
+      console.log('Failed to updated albums.')
+    } finally {
+      this.setLoading(false);
+    }
   },
 
   /**

@@ -4,3 +4,16 @@
   position: fixed;
   transition: top 0.8s cubic-bezier(.2, 1, 0, 1);
 }
+
+.details-loading {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.details-loading-text {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40vh;
+  color: rgb(160, 160, 160);
+}

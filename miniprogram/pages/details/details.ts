@@ -13,37 +13,48 @@ Page({
     top: "100",
     style: 'opacity: 1; transition: opacity 0.5s ease-in-out;',
     title: "",
-    subTitle: ''
+    subTitle: '',
+    loading: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   async onLoad(options) {
-    if ((options.openID && options.albumID)) {
-      console.log('Is shared');
-      wx.setStorageSync('openID', options.openID);
-      wx.setStorageSync('albumID', options.albumID);
+
+    try {
+      this.setLoading(true);
+
+      if ((options.openID && options.albumID)) {
+        console.log('Is shared');
+        wx.setStorageSync('openID', options.openID);
+        wx.setStorageSync('albumID', options.albumID);
+      }
+
+      let albumID = wx.getStorageSync('albumID');
+      const album = await getAlbum(albumID);
+
+      this.setData({
+        title: album.title,
+        subTitle: album.subTitle
+      });
+
+      this.setPhotoCreationDisplay = this.setPhotoCreationDisplay.bind(this);
+      this.updatePhotos = this.updatePhotos.bind(this);
+
+      const app: IAppOption = getApp();
+
+      app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
+      app.globalData.updateAlbumPhotosTrigger.subscribers.push(this.updatePhotos);
+      app.globalData.detailsViewMode.subscribers.push(this.updatePhotos);
+
+      app.setDetailsViewMode('normal', false);
+      await this.updatePhotos();
+    } catch (e) {
+      console.log(e);
+    } finally {
+      this.setLoading(false);
     }
-
-    let albumID = wx.getStorageSync('albumID');
-    const album = await getAlbum(albumID);
-
-    this.setData({
-      title: album.title,
-      subTitle: album.subTitle
-    });
-
-    this.setPhotoCreationDisplay = this.setPhotoCreationDisplay.bind(this);
-    this.updatePhotos = this.updatePhotos.bind(this);
-
-    const app: IAppOption = getApp();
-
-    app.globalData.photoCreationShown.subscribers.push(this.setPhotoCreationDisplay);
-    app.globalData.updateAlbumPhotosTrigger.subscribers.push(this.updatePhotos);
-    app.globalData.detailsViewMode.subscribers.push(this.updatePhotos);
-
-    app.setDetailsViewMode('normal');
   },
 
   /**
@@ -143,5 +154,11 @@ Page({
         style: 'opacity: 1; transition: opacity 0.5s ease-in-out;'
       });
     })
-  }
+  },
+
+  setLoading(loading: boolean) {
+    this.setData({
+      loading: loading
+    })
+  },
 })

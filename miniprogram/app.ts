@@ -81,10 +81,12 @@ App<IAppOption>({
     this.globalData.updateAlbumsTrigger.subscribers.forEach((callback: () => void) => callback());
   },
 
-  async setDetailsViewMode(mode: string) {
+  async setDetailsViewMode(mode: string, refresh: boolean = true) {
     this.globalData.detailsViewMode.value = mode;
-    for (const callback of this.globalData.detailsViewMode.subscribers) {
-      await callback(mode);
+    if (refresh) {
+      for (const callback of this.globalData.detailsViewMode.subscribers) {
+        await callback(mode);
+      }
     }
   },
 
