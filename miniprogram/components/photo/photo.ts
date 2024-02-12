@@ -34,6 +34,10 @@ Component({
     type: {
       type: String,
       value: undefined
+    },
+    photoUrls: {
+      type: Array,
+      value: []
     }
   },
 
@@ -51,7 +55,7 @@ Component({
     previewImage() {
       wx.previewImage({
         current: this.properties.imageUrl,
-        urls: [this.properties.imageUrl]
+        urls: this.properties.photoUrls
       });
     },
 

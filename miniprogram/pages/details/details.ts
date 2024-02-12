@@ -10,6 +10,7 @@ Page({
    */
   data: {
     albumPhotos: [] as object[],
+    photoUrls: [] as string[],
     top: "100",
     style: 'opacity: 1; transition: opacity 0.5s ease-in-out;',
     title: "",
@@ -117,6 +118,12 @@ Page({
     });
   },
 
+  setPhotoUrls(urls: any): void {
+    this.setData({
+      'photoUrls': urls
+    });
+  },
+
   setPhotoCreationDisplay(shown: boolean): void {
     this.setData({
       top: shown ? "0" : "100"
@@ -143,6 +150,8 @@ Page({
     });
     this.setFadeInOut();
     this.setAlbumPhotos(photoList);
+    const bgUrls = photoList.map(item => item.imageUrl);
+    this.setPhotoUrls(bgUrls);
   },
 
   setFadeInOut() {
