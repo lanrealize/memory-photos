@@ -72,7 +72,7 @@ Component({
             }, this.data.animationDuration)
           })
         }
-      }
+      };
     },
 
     stopAnimation() {
@@ -86,7 +86,13 @@ Component({
 
   lifetimes: {
     attached() {
-
+      const audio = wx.createInnerAudioContext();
+      audio.src = "https://freepd.com/music/Study%20and%20Relax.mp3";
+      audio.play();
+      wx.setInnerAudioOption({
+        obeyMuteSwitch: false
+      });
+      audio.stop();
     }
   }
 })
